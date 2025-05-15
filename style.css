@@ -9,15 +9,15 @@
 body {
   font-family: 'Georgia', serif;
   line-height: 1.6;
-  color: #3d2e1e; /* Deep brown */
-  background-color: #f5f1ea; /* Light parchment background */
+  color: #0d1f33; /* deep navy text */
+  background-color: #ffffff; /* white background */
 }
 
 /* Header */
 header {
-  background-color: #4b3621; /* Deep warm brown */
-  color: #fff;
-  padding: 2rem 1rem;
+  background-color: #0c2d48; /* dark navy */
+  color: #ffffff;
+  padding: 2rem 0;
   text-align: center;
 }
 
@@ -25,10 +25,10 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -36,31 +36,12 @@ header {
   font-weight: bold;
 }
 
-/* Navigation */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
 .subtitle {
   font-size: 1.3rem;
   margin-top: 1rem;
-  opacity: 0.95;
+  opacity: 0.9;
 }
 
-/* Phone number */
 .contact-phone {
   font-size: 1rem;
   margin-top: 0.5rem;
@@ -73,6 +54,22 @@ header {
 }
 
 .contact-phone a:hover {
+  text-decoration: underline;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.nav-links a:hover {
   text-decoration: underline;
 }
 
@@ -89,21 +86,20 @@ section {
 
 h2 {
   font-size: 2rem;
-  color: #4b3621; /* Deep brown */
+  color: #0c2d48; /* dark navy */
   margin-bottom: 1rem;
 }
 
-/* List styling */
 .steps li {
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
 
-/* Call-to-action Button */
+/* Button */
 .start-button {
   display: inline-block;
-  background-color: #7a5e3a; /* Warm gold-brown */
-  color: #fff;
+  background-color: #0c2d48; /* dark navy */
+  color: #ffffff;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   border-radius: 5px;
@@ -112,10 +108,10 @@ h2 {
 }
 
 .start-button:hover {
-  background-color: #5e4429;
+  background-color: #183c61;
 }
 
-/* Contact Form */
+/* Contact form */
 form {
   display: flex;
   flex-direction: column;
@@ -137,8 +133,8 @@ textarea {
 
 /* Footer */
 footer {
-  background-color: #4b3621;
-  color: #fff;
+  background-color: #0c2d48;
+  color: #ffffff;
   text-align: center;
   padding: 1rem 0;
 }
@@ -171,4 +167,9 @@ footer a:hover {
   h2 {
     font-size: 1.8rem;
   }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
