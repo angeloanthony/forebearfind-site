@@ -3,14 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ForebearFind helps you uncover your family's story through expert genealogy research and ancestry tracing.">
+  <meta name="keywords" content="genealogy, ancestry, family history, ForebearFind, family tree">
+  <meta name="author" content="ForebearFind">
+  <meta property="og:title" content="ForebearFind - Genealogy Research">
+  <meta property="og:description" content="Discover your ancestry with ForebearFind's expert genealogy services.">
+  <meta property="og:image" content="https://forebearfind.com/images/og-image.jpg">
+  <meta property="og:url" content="https://forebearfind.com">
   <title>ForebearFind - Genealogy Research</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+      const hamburger = document.querySelector('.hamburger');
+      if (hamburger) {
+        hamburger.addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.toggle('active');
+        });
+      }
+    });
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ForebearFind",
+    "url": "https://forebearfind.com",
+    "logo": "https://forebearfind.com/images/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "forebearfind@outlook.com",
+      "contactType": "Customer Service"
+    }
+  }
+  </script>
 </head>
 <body>
   <header>
     <div class="nav-container">
       <h1 class="logo">ForebearFind</h1>
-      <nav>
+      <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+      <nav aria-label="Main navigation">
         <ul class="nav-links">
           <li><a href="#mission">Mission</a></li>
           <li><a href="#how">How It Works</a></li>
@@ -42,17 +81,32 @@
       <p>Contact us to schedule a free consultation or explore our research packages tailored to your family history goals.</p>
       <a href="#contact" class="start-button">Start My Tree</a>
     </section>
-   <section id="contact">
-  <h2>Contact Us</h2>
-  <p>
-    We’d love to help you uncover your family story.
-    Email us at
-    <a href="mailto:forebearfind@outlook.com">forebearfind@outlook.com</a>
-    or use the form below.
-  </p>
 
-  <!-- Optional: You can add a contact form here later -->
-</section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>
+        We’d love to help you uncover your family story.
+        Email us at <a href="mailto:forebearfind@outlook.com">forebearfind@outlook.com</a>
+        or use the form below.
+      </p>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br>
+        <button type="submit" class="start-button">Send Message</button>
+      </form>
+    </section>
+
+    <section id="testimonials">
+      <h2>What Our Clients Say</h2>
+      <blockquote>
+        <p>"ForebearFind uncovered my great-grandparents’ immigration story—it was life-changing!"</p>
+        <cite>— Jane D., New York</cite>
+      </blockquote>
+    </section>
   </main>
 
   <footer>
