@@ -350,7 +350,7 @@ html {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* 40% dark transparent */
+  background-color: rgba(0, 0, 0, 0.25); /* 40% dark transparent */
   z-index: 1;
 }
 
