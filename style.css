@@ -353,6 +353,16 @@ html {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
   z-index: 1;
 }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  height: 40px; /* adjust as needed */
+  width: auto;
+}
 
 
 
