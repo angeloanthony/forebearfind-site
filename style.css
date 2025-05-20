@@ -365,32 +365,32 @@ html {
 
 .logo img {
   height: auto;
-  max-height: 80px;
+  max-height: 90px;
   width: auto;
-  max-width: 120px;
+  max-width: 130px;
 }
 
 /* Tablet */
 @media (max-width: 768px) {
   .logo img {
-    max-height: 70px;
-    max-width: 100px;
+    max-height: 80px;
+    max-width: 110px;
   }
 }
 
 /* Phones */
 @media (max-width: 500px) {
   .logo img {
-    max-height: 60px;
-    max-width: 90px;
+    max-height: 70px;
+    max-width: 100px;
   }
 }
 
 /* Extra small phones */
 @media (max-width: 360px) {
   .logo img {
-    max-height: 50px;
-    max-width: 70px;
+    max-height: 60px;
+    max-width: 82px;
   }
 }
 
