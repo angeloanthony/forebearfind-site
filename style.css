@@ -305,6 +305,7 @@ html {
   background-color: #F0F0F0;
   padding-top: 4rem;
   padding-bottom: 4rem;
+  border: 3px solid red; /* test only */
 }
 #blog h2 {
   font-size: 2rem;
