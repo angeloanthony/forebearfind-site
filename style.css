@@ -309,9 +309,7 @@ html {
   text-align: center;
   color: #112D4E;
 }
-#blog {
-  border: 3px solid red; /* test only */
-}
+
 .read-more:hover {
   color: #3E5C76;
   text-decoration: underline;
@@ -355,15 +353,6 @@ html {
   background-color: rgba(0, 0, 0, 0.4); /* 40% dark transparent */
   z-index: 1;
 }
-
-.banner-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  text-align: center;
-  padding-top: 3rem;
-}
-
 
 
 
