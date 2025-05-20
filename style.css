@@ -298,5 +298,16 @@ html {
   color: #D4AF37;
   font-weight: bold;
 }
+#blog {
+  background-color: #F0F0F0;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+#blog h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #112D4E;
+}
+
 
 
