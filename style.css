@@ -370,6 +370,11 @@ html {
     height: 40px; /* Smaller size for phones and tablets */
   }
 }
+@media (max-width: 500px) {
+  .logo img {
+    height: 30px;
+  }
+}
 
 
 
