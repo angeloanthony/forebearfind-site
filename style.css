@@ -18,7 +18,7 @@ body {
 
 /* Header */
 header {
-  background-color: #3E5C76; /* dark navy */
+  background-color: #22788D !important;
   color: #ffffff;
   padding: 2rem 0;
   text-align: center;
@@ -100,8 +100,8 @@ h2 {
 
 /* Button */
 .start-button {
-  display: inline-block;
-  background-color: #3E5C76; /* dark navy */
+ background-color: #3BA4C1;
+  color: #ffffff;
   color: #ffffff;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
@@ -111,7 +111,7 @@ h2 {
 }
 
 .start-button:hover {
-  background-color: #183c61;
+  background-color: #22788D;
 }
 
 /* Contact form */
@@ -136,7 +136,7 @@ textarea {
 
 /* Footer */
 footer {
-  background-color: #0c2d48;
+  background-color: #22788D;
   color: #ffffff;
   text-align: center;
   padding: 1rem 0;
@@ -180,6 +180,9 @@ html {
   list-style-type: disc;
   margin-left: 1.5rem;
   line-height: 1.6;
+}
+#services {
+  background-color: #D2DAD9;
 }
 .services-list {
   display: grid;
@@ -302,7 +305,7 @@ html {
   font-weight: bold;
 }
 #blog {
-  background-color: #F0F0F0;
+  background-color: #F9F9F9;
   padding-top: 4rem;
   padding-bottom: 4rem;
   border: 3px solid red; /* test only */
