@@ -364,6 +364,13 @@ html {
   width: auto;
 }
 
+/* Responsive logo size for mobile screens */
+@media (max-width: 768px) {
+  .logo img {
+    height: 40px; /* Smaller size for phones and tablets */
+  }
+}
+
 
 
 
