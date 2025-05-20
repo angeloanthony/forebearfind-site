@@ -28,11 +28,6 @@ body {
   flex-wrap: wrap;
 }
 
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
 .subtitle {
   font-size: 1.3rem;
   margin-top: 1rem;
