@@ -312,6 +312,9 @@ html {
   text-align: center;
   color: #112D4E;
 }
+#blog {
+  border: 3px solid red; /* test only */
+}
 
 
 
