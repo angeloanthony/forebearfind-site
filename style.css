@@ -315,6 +315,10 @@ html {
 #blog {
   border: 3px solid red; /* test only */
 }
+.read-more:hover {
+  color: #3E5C76;
+  text-decoration: underline;
+}
 
 
 
