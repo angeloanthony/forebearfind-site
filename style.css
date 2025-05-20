@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.section {
+  scroll-margin-top: 100px; /* Adjust based on header height */
+}
 
 /* Global styles */
 body {
