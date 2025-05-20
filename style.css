@@ -178,4 +178,23 @@ html {
   margin-left: 1.5rem;
   line-height: 1.6;
 }
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.services-list div {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.services-list h3 {
+  margin-top: 0;
+  color: #112D4E;
+}
+
 
