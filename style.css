@@ -421,6 +421,15 @@ html {
   </a>
   <span class="logo-text">ForebearFind</span>
 </div>
+@media (max-width: 768px) {
+  .floating-logo img {
+    width: 70px;   /* Much smaller on small screens */
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+}
 
 
 
