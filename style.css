@@ -412,11 +412,6 @@ html {
     width: 70px;   /* Much smaller on small screens */
   }
 
-  .logo-text {
-    font-size: 1rem;
-  }
-}
-
 @media (max-width: 1024px) {
   .hamburger {
     display: block;
