@@ -391,19 +391,22 @@ html {
     max-width: 100px;
   }
 }
+
 .floating-logo {
   position: absolute;
   top: 20px;
   left: 40px;
+  z-index: 1000;
   display: flex;
   align-items: center;
   gap: 10px;
-  z-index: 1000;
+  max-width: 150px; /* optional: limit container width */
 }
 
 .floating-logo img {
-  width: 110px;
-  height: auto;
+  width: 120px;   /* ✅ Resize to a more reasonable width */
+  height: auto;   /* ✅ Maintain proper aspect ratio */
+  max-width: 100%; /* ✅ Prevent overflow */
 }
 
 .logo-text {
