@@ -334,12 +334,6 @@ html {
   z-index: -1; /* ensure it's behind content */
 }
 
-@media (max-width: 500px) {
-  .video-banner {
-    height: 600px;
-  }
-}
-
 .overlay {
   position: absolute;
   top: 0;
@@ -494,6 +488,12 @@ html {
 
   .contact-phone {
     font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .banner-content {
+    padding: 3rem 1rem 2rem;
+    text-align: center;
   }
 }
 
