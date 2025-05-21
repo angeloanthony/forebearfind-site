@@ -364,9 +364,9 @@ html {
 }
 
 .logo img {
-  height: 100px;         /* Set a good default height */
+  height: 200px;         /* Set a good default height */
   width: auto;
-  max-width: 200px;      /* Only restrict very large screens */
+  max-width: 300px;      /* Only restrict very large screens */
 }
 
 /* Tablet */
