@@ -391,6 +391,26 @@ html {
     max-width: 100px;
   }
 }
+.floating-logo {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.floating-logo img {
+  width: 110px;
+  height: auto;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  color: white;
+  font-weight: bold;
+}
 
 
 
