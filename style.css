@@ -430,6 +430,41 @@ html {
     font-size: 1rem;
   }
 }
+/* Hide nav links by default on small screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+}
+.hamburger {
+  display: none;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
 
 
 
