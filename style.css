@@ -148,11 +148,6 @@ footer a:hover {
     gap: 1rem;
   }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
   .logo {
     font-size: 1.8rem;
   }
@@ -421,127 +416,24 @@ html {
     font-size: 1rem;
   }
 }
-/* Hide nav links by default on small screens */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 1rem;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-  }
 
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-}
-.hamburger {
-  display: none;
-}
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hamburger {
     display: block;
   }
 }
-@media (max-width: 768px) {
-  .video-banner {
-    height: 550px;
-  }
 
-  .floating-logo {
-    top: 10px;
-    left: 15px;
-  }
-
-  .floating-logo img {
-    width: 70px;
-  }
-
-  .logo-text {
-    font-size: 1rem;
-  }
-
-  .banner-content {
-    padding: 0 1rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .contact-phone {
-    font-size: 0.9rem;
-  }
-}
 @media (max-width: 768px) {
   .banner-content {
     padding: 3rem 1rem 2rem;
     text-align: center;
   }
 }
-@media (max-width: 768px) {
-  .video-banner video {
-    object-fit: cover;      /* still cover the banner */
-    width: 100%;
-    height: 100%;
-    max-height: 100%;       /* prevent over-expansion */
-  }
-}
+
 .video-banner {
   position: relative;
   height: 90vh;
   overflow: hidden;
-}
-.video-banner {
-  position: relative;
-  height: 90vh;
-  overflow: hidden;
-}
-
-.video-banner video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-/* Floating logo in top-left */
-.floating-logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.floating-logo img {
-  width: 90px;
-  height: auto;
-}
-
-.logo-text {
-  font-size: 1.4rem;
-  color: white;
-  font-weight: bold;
 }
 
 /* Navigation */
@@ -553,87 +445,8 @@ html {
   gap: 1rem;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  color: white;
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
 .hamburger {
   display: none;
-}
-
-/* Overlay styling */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  padding-bottom: 80px;
-}
-
-.banner-content {
-  text-align: center;
-}
-
-/* Responsive mobile tweaks */
-@media (max-width: 768px) {
-  .floating-logo {
-    top: 10px;
-    left: 15px;
-  }
-
-  .floating-logo img {
-    width: 60px;
-  }
-
-  .logo-text {
-    font-size: 1rem;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    margin-bottom: 1rem;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.85);
-    padding: 1rem;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
 }
 
 
