@@ -466,6 +466,37 @@ html {
     display: block;
   }
 }
+@media (max-width: 768px) {
+  .video-banner {
+    height: 550px;
+  }
+
+  .floating-logo {
+    top: 10px;
+    left: 15px;
+  }
+
+  .floating-logo img {
+    width: 70px;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .banner-content {
+    padding: 0 1rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-phone {
+    font-size: 0.9rem;
+  }
+}
+
 
 
 
