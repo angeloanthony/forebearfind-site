@@ -13,22 +13,16 @@
   <title>ForebearFind - Genealogy Research</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-        });
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
-      const hamburger = document.querySelector('.hamburger');
-      if (hamburger) {
-        hamburger.addEventListener('click', () => {
-          document.querySelector('.nav-links').classList.toggle('active');
-        });
-      }
     });
-  </script>
+  });
+</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,7 +36,18 @@
       "contactType": "Customer Service"
     }
   }
-  </script>
+      </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  });
+</script>
 </head>
 <body>
 <header class="video-banner">
