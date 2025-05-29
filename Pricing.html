@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Forebear Find's transparent pricing for genealogy services, including ancestry research, Italian citizenship assistance, and custom family histories.">
+    <title>Pricing | Forebear Find</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        main {
+            padding: 3rem 1rem;
+            background-color: #f0f8ff;
+        }
+        main section {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        main section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+        main h2 {
+            color: #ff4500;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        main h2::after {
+            content: '';
+            width: 50%;
+            height: 3px;
+            background-color: #ff4500;
+            position: absolute;
+            bottom: -5px;
+            left: 25%;
+        }
+        main p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        main ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        main li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        main li::before {
+            content: "✔";
+            color: #ff4500;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        main a {
+            color: #ff69b4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main a:hover {
+            text-decoration: underline;
+            color: #ff1493;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+        }
+        .pricing-tier {
+            border: 2px solid #ffd700;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            background-color: #fffef0;
+        }
+        .pricing-tier h3 {
+            color: #ff4500;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .pricing-tier .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #002b49;
+            margin-bottom: 1rem;
+        }
+        /* Mobile spacing adjustments */
+        @media (max-width: 600px) {
+            main section {
+                padding: 1.25rem;
+            }
+            main h2 {
+                font-size: 1.5rem;
+            }
+            main p, main li {
+                font-size: 1rem;
+            }
+            .pricing-tier h3 {
+                font-size: 1.3rem;
+            }
+            .pricing-tier .price {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <span>📧 forebearfind@outlook.com</span>
+            <span>📞 +1 (435) 219-5120</span>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-top">
+            <div class="logo-left">
+                <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Logo" loading="lazy"></a>
+            </div>
+            <div class="site-name-center">
+                <span class="site-name">Forebear Find</span>
+            </div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+                <li><a href="portfolio.html">Research Portfolio</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Pricing for Genealogy Services</h2>
+            <p>At <span class="highlight">Forebear Find</span>, we believe in transparent pricing that reflects the value of our personalized genealogy research. Our packages are tailored to your needs, ensuring you get the most out of your ancestral journey. Below are our pricing tiers for various services.</p>
+        </section>
+
+        <section>
+            <h2>Our Pricing Tiers</h2>
+            <div class="pricing-tier">
+                <h3>Historical Records Discovery</h3>
+                <p class="price">Starting at $150</p>
+                <p>Uncover vital records such as birth, marriage, census, and immigration documents to build the foundation of your family history.</p>
+            </div>
+            <div class="pricing-tier">
+                <h3>Ancestry Tracing</h3>
+                <p class="price">Starting at $300</p>
+                <p>Trace your African American, Italian, or Scots-Irish roots with in-depth research tailored to your heritage.</p>
+            </div>
+            <div class="pricing-tier">
+                <h3>Italian Citizenship Assistance</h3>
+                <p class="price">Starting at $500</p>
+                <p>Comprehensive support for Italian dual citizenship applications, including document retrieval and application guidance.</p>
+            </div>
+            <div class="pricing-tier">
+                <h3>Custom Family History</h3>
+                <p class="price">Starting at $400</p>
+                <p>Receive a detailed, narrative family history crafted from historical documents, perfect for preserving your legacy.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>What’s Included</h2>
+            <ul>
+                <li>Initial consultation to understand your goals</li>
+                <li>Access to professional genealogical research tools and archives</li>
+                <li>Detailed reports or narratives, depending on the package</li>
+                <li>Ongoing communication and updates throughout the process</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contact Us for a Quote</h2>
+            <p>Every family’s story is unique, and pricing may vary based on the scope of your project. <a href="contact.html">Contact us</a> today for a free consultation and personalized quote to start exploring your heritage.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Forebear Find</p>
+            <p>Email: <a href="mailto:forebearfind@outlook.com">forebearfind@outlook.com</a> | Phone: <a href="tel:+14352195120">+1 (435) 219-5120</a></p>
+            <p>Designed by Rocco DeLuca</p>
+        </div>
+    </footer>
+</body>
+</html>

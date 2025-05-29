@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View Forebear Find's research portfolio, showcasing successful genealogy projects, including Italian ancestry tracing, African American lineage research, and family history narratives.">
+    <title>Research Portfolio | Forebear Find</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        main {
+            padding: 3rem 1rem;
+            background-color: #f0f8ff;
+        }
+        main section {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        main section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+        main h2 {
+            color: #ff4500;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        main h2::after {
+            content: '';
+            width: 50%;
+            height: 3px;
+            background-color: #ff4500;
+            position: absolute;
+            bottom: -5px;
+            left: 25%;
+        }
+        main h3 {
+            color: #ff4500;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        main p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        main ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        main li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        main li::before {
+            content: "✔";
+            color: #ff4500;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        main img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        main a {
+            color: #ff69b4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main a:hover {
+            text-decoration: underline;
+            color: #ff1493;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+        }
+        .project {
+            border: 2px solid #ffd700;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            background-color: #fffef0;
+        }
+        /* Mobile spacing adjustments */
+        @media (max-width: 600px) {
+            main section {
+                padding: 1.25rem;
+            }
+            main h2 {
+                font-size: 1.5rem;
+            }
+            main h3 {
+                font-size: 1.3rem;
+            }
+            main p, main li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <span>📧 forebearfind@outlook.com</span>
+            <span>📞 +1 (435) 219-5120</span>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-top">
+            <div class="logo-left">
+                <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Logo" loading="lazy"></a>
+            </div>
+            <div class="site-name-center">
+                <span class="site-name">Forebear Find</span>
+            </div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="portfolio.html" class="active">Research Portfolio</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Our Research Portfolio</h2>
+            <p>At <span class="highlight">Forebear Find</span>, we take pride in helping families uncover their histories and preserve their legacies. Below are some examples of our past projects, showcasing the depth and care we bring to every genealogy journey.</p>
+        </section>
+
+        <section>
+            <h2>Sample Projects</h2>
+            <div class="project">
+                <h3>Tracing Italian Ancestry for Citizenship</h3>
+                <p>We assisted a client in tracing their Italian lineage back to the early 1900s, uncovering birth and marriage records from a small village in Sicily. These documents supported their successful application for Italian dual citizenship.</p>
+                <img src="images/italian_records.jpg" alt="Historical Italian birth certificate used for citizenship application.">
+            </div>
+            <div class="project">
+                <h3>African American Lineage Research</h3>
+                <p>For a family seeking their roots, we traced their lineage through Reconstruction-era records, identifying formerly enslaved ancestors in South Carolina. The project culminated in a detailed family tree and narrative history.</p>
+                <img src="images/family_tree.jpg" alt="Detailed family tree showcasing African American lineage.">
+            </div>
+            <div class="project">
+                <h3>Scots-Irish Immigration Story</h3>
+                <p>We explored a client’s Scots-Irish heritage, uncovering immigration records from the 1800s that detailed their ancestors’ journey to America. The final deliverable was a narrative history, complete with historical context and photos.</p>
+                <img src="images/oldfamilyphotos1.jpg" alt="Sepia-toned photo of a Scots-Irish immigrant family in the 1800s.">
+            </div>
+        </section>
+
+        <section>
+            <h2>Ready to Start Your Journey?</h2>
+            <p>These projects are just a glimpse of what we can do for you. <a href="contact.html">Contact us</a> today to discuss your own genealogy project and how we can help bring your family’s story to life.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Forebear Find</p>
+            <p>Email: <a href="mailto:forebearfind@outlook.com">forebearfind@outlook.com</a> | Phone: <a href="tel:+14352195120">+1 (435) 219-5120</a></p>
+            <p>Designed by Rocco DeLuca</p>
+        </div>
+    </footer>
+</body>
+</html>
