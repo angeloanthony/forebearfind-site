@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Forebear Find's genealogy services, including Italian citizenship assistance, African American ancestry research, and custom family history creation.">
-    <title>Services | Forebear Find</title>
+    <meta name="description" content="Discover Forebear Find's transparent pricing for genealogy services, including ancestry research, Italian citizenship assistance, and custom family histories.">
+    <title>Pricing | Forebear Find</title>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -66,13 +66,6 @@
             left: 0;
             font-size: 1.2rem;
         }
-        main img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin: 1.5rem 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
         main a {
             color: #ff69b4;
             text-decoration: none;
@@ -87,6 +80,24 @@
             padding: 0.2rem 0.5rem;
             border-radius: 5px;
         }
+        .pricing-tier {
+            border: 2px solid #ffd700;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            background-color: #fffef0;
+        }
+        .pricing-tier h3 {
+            color: #ff4500;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .pricing-tier .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #002b49;
+            margin-bottom: 1rem;
+        }
         /* Mobile spacing adjustments */
         @media (max-width: 600px) {
             main section {
@@ -97,6 +108,12 @@
             }
             main p, main li {
                 font-size: 1rem;
+            }
+            .pricing-tier h3 {
+                font-size: 1.3rem;
+            }
+            .pricing-tier .price {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -128,8 +145,8 @@
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
                 <li><a href="portfolio.html">Research Portfolio</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -139,34 +156,47 @@
 
     <main>
         <section>
-            <h2>Our Genealogy Services</h2>
-            <p>At <span class="highlight">Forebear Find</span>, we offer a range of expert genealogy services to help you uncover and preserve your family’s history. Whether you’re tracing your roots or seeking citizenship, our personalized approach ensures every detail is brought to light.</p>
+            <h2>Pricing for Genealogy Services</h2>
+            <p>At <span class="highlight">Forebear Find</span>, we believe in transparent pricing that reflects the value of our personalized genealogy research. Our packages are tailored to your needs, ensuring you get the most out of your ancestral journey. Below are our pricing tiers for various services.</p>
         </section>
 
         <section>
-            <h2>Our Service Offerings</h2>
+            <h2>Our Pricing Tiers</h2>
+            <div class="pricing-tier">
+                <h3>Historical Records Discovery</h3>
+                <p class="price">Starting at $150</p>
+                <p>Uncover vital records such as birth, marriage, census, and immigration documents to build the foundation of your family history.</p>
+            </div>
+            <div class="pricing-tier">
+                <h3>Ancestry Tracing</h3>
+                <p class="price">Starting at $300</p>
+                <p>Trace your African American, Italian, or Scots-Irish roots with in-depth research tailored to your heritage.</p>
+            </div>
+            <div class="pricing-tier">
+                <h3>Italian Citizenship Assistance</h3>
+                <p class="price">Starting at $500</p>
+                <p>Comprehensive support for Italian dual citizenship applications, including document retrieval and application guidance.</p>
+            </div>
+            <div class="pricing-tier">
+                <h3>Custom Family History</h3>
+                <p class="price">Starting at $400</p>
+                <p>Receive a detailed, narrative family history crafted from historical documents, perfect for preserving your legacy.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>What’s Included</h2>
             <ul>
-                <li>Uncover birth, marriage, census, and immigration records with precision</li>
-                <li>Trace African American, Italian, and Scots-Irish ancestry with specialized research</li>
-                <li>Provide expert guidance through Italian dual citizenship applications</li>
-                <li>Create detailed, narrative family histories from historical documents</li>
+                <li>Initial consultation to understand your goals</li>
+                <li>Access to professional genealogical research tools and archives</li>
+                <li>Detailed reports or narratives, depending on the package</li>
+                <li>Ongoing communication and updates throughout the process</li>
             </ul>
         </section>
 
         <section>
-            <h2>How We Work</h2>
-            <p>Our process begins with a consultation to understand your goals, followed by meticulous research using both traditional archives and modern digital tools. We deliver comprehensive reports and personalized narratives, ensuring your family’s story is accurate and engaging.</p>
-        </section>
-
-        <section>
-            <h2>Sample Deliverables</h2>
-            <img src="images/oldfamilyphotos1.jpg" alt="Sample family history document and photos representing genealogy research deliverables.">
-            <p>From detailed family trees to beautifully crafted histories, our deliverables bring your ancestry to life—perfect for sharing with loved ones or supporting citizenship claims.</p>
-        </section>
-
-        <section>
-            <h2>Get Started</h2>
-            <p>Ready to explore your heritage? <a href="contact.html">Contact us</a> today for a free consultation and let’s begin your journey together.</p>
+            <h2>Contact Us for a Quote</h2>
+            <p>Every family’s story is unique, and pricing may vary based on the scope of your project. <a href="contact.html">Contact us</a> today for a free consultation and personalized quote to start exploring your heritage.</p>
         </section>
     </main>
 
