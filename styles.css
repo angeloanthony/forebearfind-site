@@ -128,11 +128,11 @@ p {
   color: #ff69b4; /* Hot pink on hover */
 }
 
-/* Hamburger Menu */
-.nav-toggle {
+.menu-toggle {
   display: none;
 }
 
+/* Hamburger Menu */
 .nav-toggle-label {
   display: none;
   width: 40px; /* Larger for touch */
@@ -454,41 +454,59 @@ p {
     z-index: 1002; /* Ensure above other elements */
   }
 
-  .main-nav {
-    display: none;
-    width: 100%;
-    background: #f0f8ff; /* Light blue to match body */
-    padding: 1rem 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1001;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
+  .menu-toggle {
+  display: block;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #002b49;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1003; /* Above other elements */
+}
 
-  .nav-toggle:checked ~ .main-nav {
-    display: block;
-  }
+.nav-toggle-label {
+  display: none; /* Hide the default hamburger lines since we're using the button */
+}
+
+  .main-nav {
+  display: none;
+  width: 100%;
+  background: #002b49; /* Dark blue to match top bar */
+  padding: 1rem 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1001;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-toggle:checked ~ .main-nav {
+  display: block;
+}
 
   .nav-menu {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-  .nav-menu li a {
-    font-size: 1.2rem;
-    padding: 1rem;
-    width: 100%;
-    text-align: center;
-    color: #002b49;
-    transition: background-color 0.3s;
-  }
+.nav-menu li a {
+  font-size: 1.2rem;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  color: white; /* White text for contrast on dark background */
+  transition: background-color 0.3s;
+}
 
-  .nav-menu li a:hover {
-    background-color: #ff69b4;
-    color: white;
-  }
+.nav-menu li a:hover {
+  background-color: #ff1493; /* Darker pink on hover */
+  color: white;
+}
 
   .hero-banner {
     height: 400px;
