@@ -136,22 +136,26 @@
             <div class="site-name-center">
                 <span class="site-name">Forebear Find</span>
             </div>
+            <!-- Hidden checkbox for mobile nav toggle -->
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <!-- Label acts as hamburger icon -->
             <label for="nav-toggle" class="nav-toggle-label">
                 <span></span>
             </label>
+            <!-- Main navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html" class="active">Pricing</a></li>
+                    <li><a href="portfolio.html">Research Portfolio</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="main-nav">
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="pricing.html" class="active">Pricing</a></li>
-                <li><a href="portfolio.html">Research Portfolio</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
@@ -207,5 +211,16 @@
             <p>Designed by Rocco DeLuca</p>
         </div>
     </footer>
+
+    <script>
+        const toggleButton = document.getElementById('menu-toggle');
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.querySelector('.main-nav');
+
+        toggleButton.addEventListener('click', () => {
+            navToggle.checked = !navToggle.checked;
+            toggleButton.setAttribute('aria-expanded', navToggle.checked);
+        });
+    </script>
 </body>
 </html>
