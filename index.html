@@ -60,10 +60,10 @@
       <span class="site-name">Forebear Find</span>
     </div>
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <button class="menu-toggle" id="menu-toggle">☰</button>
-    <label for="nav-toggle" class="nav-toggle-label">
-      <span></span>
-    </label>
+<button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+<label for="nav-toggle" class="nav-toggle-label">
+  <span></span>
+</label>
   </div>
   <nav class="main-nav">
     <ul class="nav-menu">
@@ -207,5 +207,14 @@
       <p>Designed by Rocco DeLuca</p>
     </div>
   </footer>
+  <script>
+  const toggleButton = document.getElementById('menu-toggle');
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.querySelector('.main-nav');
+
+  toggleButton.addEventListener('click', () => {
+    navToggle.checked = !navToggle.checked;
+  });
+</script>
 </body>
 </html>
