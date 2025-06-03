@@ -52,38 +52,37 @@
 
   <!-- Main Navigation -->
   <header class="main-header">
-  <div class="container header-top">
-  <div class="logo-left">
-    <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Logo" loading="lazy"></a>
-  </div>
-  <div class="site-name-center">
-    <span class="site-name">Forebear Find</span>
-  </div>
+    <div class="container header-top">
+      <div class="logo-left">
+        <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Logo" loading="lazy"></a>
+      </div>
+      <div class="site-name-center">
+        <span class="site-name">Forebear Find</span>
+      </div>
 
-  <!-- Hidden checkbox for mobile nav toggle -->
-  <input type="checkbox" id="nav-toggle" class="nav-toggle">
-  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <!-- Hidden checkbox for mobile nav toggle -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
 
-  <!-- Label acts as hamburger icon -->
-  <label for="nav-toggle" class="nav-toggle-label">
-    <span></span>
-  </label>
+      <!-- Label acts as hamburger icon -->
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
 
-  <!-- Main navigation -->
-  <nav class="main-nav">
-    <ul class="nav-menu">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="portfolio.html">Research Portfolio</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</div>
-
-</header>
+      <!-- Main navigation -->
+      <nav class="main-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="portfolio.html">Research Portfolio</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- Hero Section -->
   <section class="hero-row">
@@ -194,15 +193,23 @@
     <div class="container">
       <h2>Get in Touch</h2>
       <p>Tell us a little about your family and what you’re hoping to discover!</p>
-      <form id="contact-form" method="POST">
-    <label for="name">Your Name</label>
-    <input type="text" id="name" name="name" placeholder="Your Name" required aria-label="Your Name">
-    <label for="email">Your Email</label>
-    <input type="email" id="email" name="email" placeholder="Your Email" required aria-label="Your Email">
-    <label for="message">Your Story</label>
-    <textarea id="message" name="message" placeholder="Tell us your story..." required aria-label="Your Story"></textarea>
-    <button type="submit" class="btn">Send Message</button>
-</form>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="5c672a3c-486f-4cce-92c4-0f5c2845b7ca">
+        <input type="hidden" name="subject" value="New Inquiry from ForebearFind.com">
+        <input type="hidden" name="redirect" value="https://www.forebearfind.com/thank-you.html">
+        <input type="hidden" name="recaptcha" value="true">
+        
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required aria-label="Your Name">
+        
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+        
+        <label for="message">Your Story</label>
+        <textarea id="message" name="message" placeholder="Tell us your story..." required aria-label="Your Story"></textarea>
+        
+        <button type="submit" class="btn">Send Message</button>
+      </form>
     </div>
   </section>
 
@@ -214,47 +221,15 @@
       <p>Designed by Rocco DeLuca</p>
     </div>
   </footer>
+
   <script>
-  const toggleButton = document.getElementById('menu-toggle');
-  const navToggle = document.getElementById('nav-toggle');
-  const navMenu = document.querySelector('.main-nav');
+    const toggleButton = document.getElementById('menu-toggle');
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('.main-nav');
 
-  toggleButton.addEventListener('click', () => {
-    navToggle.checked = !navToggle.checked;
-  });
-</script>
-<script>
-document.getElementById('contact-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    // Collect form data
-    const formData = new FormData(this);
-    const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message')
-    };
-
-    try {
-        // Send data to Cloudflare Worker (we'll create this next)
-        const response = await fetch('/api/send-email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-            alert('Message sent successfully! We’ll get back to you within 1-2 business days.');
-            this.reset(); // Clear the form
-        } else {
-            alert('Failed to send the message. Please try again later.');
-        }
-    } catch (error) {
-        alert('An error occurred. Please try again later.');
-    }
-});
-</script>
+    toggleButton.addEventListener('click', () => {
+      navToggle.checked = !navToggle.checked;
+    });
+  </script>
 </body>
 </html>
