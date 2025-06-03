@@ -151,11 +151,9 @@
             
             <div class="contact-form">
                 <h2>Send Us a Message</h2>
-                <form action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="5c672a3c-486f-4cce-92c4-0f5c2845b7ca">
-                    <input type="hidden" name="subject" value="New Inquiry from ForebearFind.com">
-                    <input type="hidden" name="redirect" value="https://www.forebearfind.com/thank-you.html">
-                    <input type="hidden" name="recaptcha" value="true">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="hidden" name="_subject" value="New Inquiry from ForebearFind.com">
+                    <input type="hidden" name="_next" value="https://www.forebearfind.com/thank-you.html">
                     
                     <label for="name" id="name-label">Your Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required aria-describedby="name-label">
@@ -183,7 +181,7 @@
 
     <script>
         const toggleButton = document.getElementById('menu-toggle');
-        const navToggle = document.getElementById('nav-toggle');
+        const navToggle = document.getElement. ById('nav-toggle');
         const navMenu = document.querySelector('.main-nav');
 
         toggleButton.addEventListener('click', () => {
