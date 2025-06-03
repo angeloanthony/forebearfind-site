@@ -15,6 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.forebearfind.com">
   <meta property="og:image" content="https://www.forebearfind.com/images/ForebearFindLogo1.png">
+  <meta property="og:site_name" content="Forebear Find">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -62,7 +63,7 @@
 
       <!-- Hidden checkbox for mobile nav toggle -->
       <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
       <!-- Label acts as hamburger icon -->
       <label for="nav-toggle" class="nav-toggle-label">
@@ -216,20 +217,22 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>© 2025 Forebear Find. All Rights Reserved.</p>
+      <p>© <span id="current-year">2025</span> Forebear Find. All Rights Reserved.</p>
       <p>Email: <a href="mailto:forebearfind@outlook.com">forebearfind@outlook.com</a> | Phone: <a href="tel:+14352195120">+1 (435) 219-5120</a></p>
       <p>Designed by Rocco DeLuca</p>
     </div>
   </footer>
-
   <script>
-    const toggleButton = document.getElementById('menu-toggle');
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.querySelector('.main-nav');
+  const toggleButton = document.getElementById('menu-toggle');
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.querySelector('.main-nav');
 
-    toggleButton.addEventListener('click', () => {
-      navToggle.checked = !navToggle.checked;
-    });
-  </script>
+  toggleButton.addEventListener('click', () => {
+    navToggle.checked = !navToggle.checked;
+    toggleButton.setAttribute('aria-expanded', navToggle.checked);
+  });
+</script>
+<call-us-selector phonesystem-url="https://1888.3cx.cloud" party="forebearfind"></call-us-selector>
+<script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
 </body>
 </html>
