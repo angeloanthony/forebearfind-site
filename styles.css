@@ -654,3 +654,10 @@ p {
     font-weight: bold;
   }
 }
+
+@media (max-width: 768px) {
+  #wp-live-chat-by-3CX {
+    transform: scale(1.2); /* Smaller scale on mobile */
+    bottom: 20px !important;
+  }
+}

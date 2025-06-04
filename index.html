@@ -39,6 +39,32 @@
       font-weight: bold;
       color: #ff69b4; /* Match the hover color from styles.css */
     }
+    /* Enlarge and reposition the 3CX chat bubble */
+#wp-live-chat-by-3CX {
+  transform: scale(1.4); /* Increase size by 40% */
+  bottom: 80px !important; /* Position higher on the screen */
+  right: 30px !important; /* Adjust right margin */
+  z-index: 999999 !important; /* Ensure it stays on top */
+}
+
+/* Optional: Add a glowing effect */
+#wp-live-chat-by-3CX::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(255, 255, 0, 0.6);
+  animation: pulseGlow 2s infinite ease-in-out;
+  z-index: -1;
+}
+
+/* Glow animation keyframes */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 8px rgba(255, 255, 0, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 0, 0.8); }
+  100% { box-shadow: 0 0 8px rgba(255, 255, 0, 0.4); }
+}
   </style>
 </head>
 
@@ -222,6 +248,9 @@
       <p>Designed by Rocco DeLuca</p>
     </div>
   </footer>
+  <script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
   <script>
   const toggleButton = document.getElementById('menu-toggle');
   const navToggle = document.getElementById('nav-toggle');
