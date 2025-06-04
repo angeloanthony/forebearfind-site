@@ -8,7 +8,7 @@
   <meta name="author" content="Rocco DeLuca, Forebear Find">
   <meta name="robots" content="index, follow">
   <meta http-equiv="content-language" content="en-US">
-  
+
   <!-- Open Graph for social media -->
   <meta property="og:title" content="Forebear Find - Discover Your Family’s Legacy">
   <meta property="og:description" content="Uncover your ancestors’ stories with Forebear Find’s expert genealogy services, specializing in Italian citizenship, African American ancestry, and noble lineage research.">
@@ -26,12 +26,14 @@
   <title>Forebear Find – Uncover Your Ancestral Legacy</title>
 
   <!-- Favicon for browser tab -->
+  <link rel="preload" href="images/ForebearFindLogo1.png" as="image" type="image/png">
   <link rel="icon" href="images/ForebearFindLogo1.png" type="image/png">
   <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
   <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Style for active navigation link */
@@ -39,32 +41,6 @@
       font-weight: bold;
       color: #ff69b4; /* Match the hover color from styles.css */
     }
-    /* Enlarge and reposition the 3CX chat bubble */
-#wp-live-chat-by-3CX {
-  transform: scale(1.4); /* Increase size by 40% */
-  bottom: 80px !important; /* Position higher on the screen */
-  right: 30px !important; /* Adjust right margin */
-  z-index: 999999 !important; /* Ensure it stays on top */
-}
-
-/* Optional: Add a glowing effect */
-#wp-live-chat-by-3CX::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  box-shadow: 0 0 12px rgba(255, 255, 0, 0.6);
-  animation: pulseGlow 2s infinite ease-in-out;
-  z-index: -1;
-}
-
-/* Glow animation keyframes */
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 8px rgba(255, 255, 0, 0.4); }
-  50% { box-shadow: 0 0 20px rgba(255, 255, 0, 0.8); }
-  100% { box-shadow: 0 0 8px rgba(255, 255, 0, 0.4); }
-}
   </style>
 </head>
 
@@ -81,7 +57,7 @@
   <header class="main-header">
     <div class="container header-top">
       <div class="logo-left">
-        <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Logo" loading="lazy"></a>
+        <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Logo"></a>
       </div>
       <div class="site-name-center">
         <span class="site-name">Forebear Find</span>
@@ -89,10 +65,9 @@
 
       <!-- Hidden checkbox for mobile nav toggle -->
       <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
       <!-- Label acts as hamburger icon -->
-      <label for="nav-toggle" class="nav-toggle-label">
+      <label for="nav-toggle" class="nav-toggle-label" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
       </label>
 
@@ -114,9 +89,9 @@
   <!-- Hero Section -->
   <section class="hero-row">
     <div class="video-wrapper">
-      <video autoplay muted loop playsinline class="hero-banner" preload="metadata">
+      <video autoplay muted loop playsinline class="hero-banner" preload="auto" aria-label="Background video of a peasant family">
         <source src="images/PeasantsFamily.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        <p>Your browser does not support the video tag. This is a background video showing a peasant family, highlighting the theme of ancestral heritage.</p>
       </video>
       <div class="hero-text">
         <h1>More Than Names</h1>
@@ -130,7 +105,7 @@
     <div class="container">
       <h2>Welcome</h2>
       <p>At Forebear Find, we don’t just trace names—we uncover the rich stories of your ancestors.</p>
-      
+
       <h3>Our Expertise</h3>
       <div class="expertise-list">
         <div class="expertise-item">
@@ -225,16 +200,16 @@
         <input type="hidden" name="subject" value="New Inquiry from ForebearFind.com">
         <input type="hidden" name="redirect" value="https://www.forebearfind.com/thank-you.html">
         <input type="hidden" name="recaptcha" value="true">
-        
+
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required aria-label="Your Name">
-        
+
         <label for="email">Your Email</label>
         <input type="email" id="email" name="email" placeholder="Your Email" required aria-label="Your Email">
-        
+
         <label for="message">Your Story</label>
         <textarea id="message" name="message" placeholder="Tell us your story..." required aria-label="Your Story"></textarea>
-        
+
         <button type="submit" class="btn">Send Message</button>
       </form>
     </div>
@@ -248,20 +223,66 @@
       <p>Designed by Rocco DeLuca</p>
     </div>
   </footer>
-  <script>
-  document.getElementById('current-year').textContent = new Date().getFullYear();
-</script>
-  <script>
-  const toggleButton = document.getElementById('menu-toggle');
-  const navToggle = document.getElementById('nav-toggle');
-  const navMenu = document.querySelector('.main-nav');
 
-  toggleButton.addEventListener('click', () => {
-    navToggle.checked = !navToggle.checked;
-    toggleButton.setAttribute('aria-expanded', navToggle.checked);
-  });
-</script>
-<call-us-selector phonesystem-url="https://1888.3cx.cloud" party="forebearfind"></call-us-selector>
-<script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
+  <script async>
+    // Update copyright year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Navigation toggle
+    const toggleLabel = document.getElementById('menu-toggle');
+    const navToggle = document.getElementById('nav-toggle');
+
+    toggleLabel.addEventListener('click', () => {
+      toggleLabel.setAttribute('aria-expanded', navToggle.checked);
+    });
+  </script>
+
+  <style>
+    body .tcx-chat-bubble,
+    body #tcx-chat-container,
+    body #tcx-widget-container,
+    body [id*="tcx"],
+    body [class*="tcx"] {
+      transform: scale(1.4) !important;
+      bottom: 80px !important;
+      right: 30px !important;
+      z-index: 999999 !important;
+    }
+
+    body .tcx-chat-bubble::before,
+    body #tcx-chat-container::before,
+    body #tcx-widget-container::before,
+    body [id*="tcx"]::before,
+    body [class*="tcx"]::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.6);
+      animation: pulseGlow 2s infinite ease-in-out;
+      z-index: -1;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 8px rgba(255, 105, 180, 0.4); }
+      50% { box-shadow: 0 0 20px rgba(255, 105, 180, 0.8); }
+      100% { box-shadow: 0 0 8px rgba(255, 105, 180, 0.4); }
+    }
+
+    @media (max-width: 768px) {
+      body .tcx-chat-bubble,
+      body #tcx-chat-container,
+      body #tcx-widget-container,
+      body [id*="tcx"],
+      body [class*="tcx"] {
+        transform: scale(1.2) !important;
+        bottom: 20px !important;
+      }
+    }
+  </style>
+
+  <call-us-selector phonesystem-url="https://1888.3cx.cloud" party="forebearfind"></call-us-selector>
+  <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
 </body>
 </html>

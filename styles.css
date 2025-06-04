@@ -10,10 +10,10 @@ html {
 }
 
 body {
-  font-family: 'Comic Sans MS', sans-serif; /* Kid-friendly font */
+  font-family: 'Comic Sans MS', 'Comic Neue', sans-serif; /* Add sans-serif as fallback */
   line-height: 1.6;
   color: #333;
-  background: #f0f8ff; /* Light blue background */
+  background: #f0f8ff;
 }
 
 .container {
@@ -49,6 +49,11 @@ p {
   background-color: #ff1493; /* Darker pink on hover */
 }
 
+.btn:focus {
+  outline: 3px solid #ff69b4;
+  outline-offset: 2px;
+}
+
 /* Top Bar */
 .top-bar {
   background: #002b49;
@@ -57,6 +62,7 @@ p {
   font-size: 1.5rem;
   text-align: center;
   font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add subtle shadow for readability */
 }
 
 .container.header-top {
@@ -130,11 +136,11 @@ p {
   color: #ff69b4; /* Hot pink on hover */
 }
 
-.menu-toggle {
-  display: none;
+.nav-menu li a:focus {
+  outline: 2px solid #ff69b4;
+  outline-offset: 2px;
 }
 
-/* Hamburger Menu */
 .nav-toggle-label {
     display: none;
     width: 40px;
@@ -358,43 +364,88 @@ p {
 }
 
 /* Contact Section */
-.contact {
+.contact-page {
   background: white;
-  padding: 3rem 0;
+  padding: 40px 0;
   text-align: center;
 }
 
-.contact form {
+.contact-info,
+.contact-form {
+  margin-bottom: 40px;
+}
+
+.contact form,
+.contact-form form {
   display: flex;
   flex-direction: column;
   gap: 15px;
   max-width: 600px;
   margin: 2rem auto;
+  background-color: #f9f9f9; /* Light gray background for contrast */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact label,
+.contact-form label {
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 1.1rem;
+  color: #002b49;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
 }
 
 .contact input,
-.contact textarea {
-  padding: 12px;
+.contact textarea,
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin-bottom: 20px;
   border: 2px solid #ffd700;
   border-radius: 5px;
   font-family: 'Comic Sans MS', sans-serif;
   font-size: 16px;
-  width: 100%;
 }
 
-.contact textarea {
+.contact input::placeholder,
+.contact textarea::placeholder,
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #999;
+  opacity: 0.8;
+}
+
+.contact input:focus,
+.contact textarea:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 3px solid #ff69b4; /* Slightly thicker border on focus */
+  outline: 2px solid #ff69b4;
+  outline-offset: 2px;
+  box-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
+}
+
+.contact textarea,
+.contact-form textarea {
   min-height: 150px;
   resize: vertical;
 }
 
-.contact button {
+.contact button,
+.contact-form button {
   background-color: #ff69b4;
   border: none;
   cursor: pointer;
 }
 
-.contact button:hover {
-  background-color: #ff1493;
+.contact button.btn,
+.contact-form button.btn {
+  margin-top: 0; /* Remove default margin-top from .btn */
 }
 
 /* Footer */
@@ -414,6 +465,11 @@ p {
 .footer a:hover {
   color: #dddddd;
   text-decoration: underline;
+}
+
+.footer a:focus {
+  outline: 2px solid #ff69b4;
+  outline-offset: 2px;
 }
 
 .footer p,
@@ -461,21 +517,8 @@ p {
   }
 
   .nav-toggle-label {
-    display: none; /* Keep hidden since we're using .menu-toggle */
-}
-.menu-toggle {
-    display: block;
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: #002b49;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1003;
-}
+    display: flex; /* Show the hamburger icon on mobile */
+  }
 
   .main-nav {
     display: none;
@@ -576,7 +619,9 @@ p {
   }
 
   .contact input,
-  .contact textarea {
+  .contact textarea,
+  .contact-form input,
+  .contact-form textarea {
     font-size: 14px;
     padding: 10px;
   }
@@ -629,7 +674,9 @@ p {
   }
 
   .contact input,
-  .contact textarea {
+  .contact textarea,
+  .contact-form input,
+  .contact-form textarea {
     font-size: 13px;
     padding: 8px;
   }
@@ -652,12 +699,5 @@ p {
     background-color: #ff69b4; /* Matches hover background */
     color: white; /* White text for contrast */
     font-weight: bold;
-  }
-}
-
-@media (max-width: 768px) {
-  #wp-live-chat-by-3CX {
-    transform: scale(1.2); /* Smaller scale on mobile */
-    bottom: 20px !important;
   }
 }
