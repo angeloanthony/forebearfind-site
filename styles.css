@@ -130,6 +130,7 @@ p {
   font-size: 1.4rem;
   padding: 0.5rem 1rem;
   display: inline-block;
+  transition: color 0.3s ease; /* Makes color change smooth */
 }
 
 .nav-menu li a:hover {
@@ -710,5 +711,141 @@ p {
 
   .main-nav.open {
     transform: translateX(0%);
+  }
+}
+
+main section {
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+main section:hover,
+main section:active {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  z-index: 11;
+}
+
+.payment-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff69b4; /* Hot pink background */
+  color: white; /* White text */
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* Add color transition */
+}
+.payment-btn:hover {
+  background-color: #ff1493; /* Darker pink on hover */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #000000; /* Black text on hover for better contrast */
+}
+
+main h2 {
+  color: #ff4500;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+main h2::after {
+  content: '';
+  width: 50%;
+  height: 3px;
+  background-color: #ff4500;
+  position: absolute;
+  bottom: -5px;
+  left: 25%;
+}
+
+main a {
+  color: #ff69b4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+main a:hover {
+  text-decoration: underline;
+  color: #ff1493;
+}
+
+main p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+main ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+main li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 2rem;
+}
+main li::before {
+  content: "✔";
+  color: #ff4500;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+.highlight {
+  background-color: #fff3cd;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+.pricing-tier {
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background-color: #fffef0;
+}
+
+.pricing-tier h3 {
+  color: #ff4500;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-tier .price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #002b49;
+  margin-bottom: 1rem;
+}
+
+main {
+  padding: 3rem 1rem;
+  background-color: #f0f8ff;
+}
+
+@media (max-width: 600px) {
+  main section {
+    padding: 1.25rem;
+  }
+  main h2 {
+    font-size: 1.5rem;
+  }
+  main p, main li {
+    font-size: 1rem;
+  }
+  .pricing-tier h3 {
+    font-size: 1.3rem;
+  }
+  .pricing-tier .price {
+    font-size: 1.1rem;
   }
 }
