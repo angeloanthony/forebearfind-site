@@ -141,6 +141,10 @@ p {
   outline-offset: 2px;
 }
 
+.nav-toggle {
+  display: none;
+}
+
 .nav-toggle-label {
     display: none;
     width: 40px;
@@ -699,5 +703,12 @@ p {
     background-color: #ff69b4; /* Matches hover background */
     color: white; /* White text for contrast */
     font-weight: bold;
+  }
+  .main-nav.closed {
+    transform: translateX(100%);
+  }
+
+  .main-nav.open {
+    transform: translateX(0%);
   }
 }

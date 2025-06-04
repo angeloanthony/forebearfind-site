@@ -72,7 +72,7 @@
       </label>
 
       <!-- Main navigation -->
-      <nav class="main-nav">
+      <nav class="main-nav closed">
         <ul class="nav-menu">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About Us</a></li>
@@ -231,9 +231,12 @@
     // Navigation toggle
     const toggleLabel = document.getElementById('menu-toggle');
     const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('.main-nav');
 
     toggleLabel.addEventListener('click', () => {
-      toggleLabel.setAttribute('aria-expanded', navToggle.checked);
+      navMenu.classList.toggle('open');
+    navMenu.classList.toggle('closed');
+    toggleLabel.setAttribute('aria-expanded', navToggle.checked);
     });
   </script>
 
