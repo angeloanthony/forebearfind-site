@@ -523,6 +523,19 @@ p {
 
   .nav-toggle-label {
     display: flex; /* Show the hamburger icon on mobile */
+        width: 15px;
+    height: 6px;
+     span,
+     span::before,
+     span::after {
+    height: 4px;
+}
+.nav-toggle-label span::before {
+  top: -9px;
+}
+.nav-toggle-label span::after {
+  top: 9px;
+}
   }
 
   .main-nav {
