@@ -523,8 +523,8 @@ p {
 
   .nav-toggle-label {
     display: flex; /* Show the hamburger icon on mobile */
-        width: 15px;
-    height: 6px;
+    width: 15px;
+    height: 12px;
      span,
      span::before,
      span::after {
@@ -735,7 +735,11 @@ main section {
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem auto;
 }
+
 main section:hover,
 main section:active {
   transform: translateY(-5px);
@@ -791,6 +795,7 @@ main p {
   line-height: 1.8;
   color: #333;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 main ul {
@@ -798,19 +803,33 @@ main ul {
   padding: 0;
   margin: 1rem 0;
 }
+
 main li {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 0.75rem;
   position: relative;
-  padding-left: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
 }
+
 main li::before {
   content: "✔";
   color: #ff4500;
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
   font-size: 1.2rem;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .highlight {
@@ -825,6 +844,9 @@ main li::before {
   padding: 1.5rem;
   margin: 1rem 0;
   background-color: #fffef0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pricing-tier h3 {
@@ -840,9 +862,37 @@ main li::before {
   margin-bottom: 1rem;
 }
 
+ .we-accept-img {
+   display: block;
+   margin: 1rem auto;
+   height: 105px;
+   width: 300px;
+ }
+
+ .we-accept-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+ .we-accept-caption {
+   font-size: 0.9rem;
+   color: #333;
+   margin-top: 0.5rem;
+   text-align: center;
+ }
+
 main {
   padding: 3rem 1rem;
   background-color: #f0f8ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (max-width: 600px) {
