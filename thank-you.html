@@ -84,15 +84,31 @@
         </div>
     </footer>
 
-    <script>
-        const toggleButton = document.getElementById('menu-toggle');
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.querySelector('.main-nav');
+    <script async>
+// Update copyright year
+document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        toggleButton.addEventListener('click', () => {
-            navToggle.checked = !navToggle.checked;
-            toggleButton.setAttribute('aria-expanded', navToggle.checked);
-        });
-    </script>
+// Navigation toggle
+const toggleLabel = document.getElementById('menu-toggle');
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.querySelector('.main-nav');
+
+toggleLabel.addEventListener('click', () => {
+  navToggle.checked = !navToggle.checked;
+  navMenu.classList.toggle('open');
+  navMenu.classList.toggle('closed');
+  toggleLabel.setAttribute('aria-expanded', navToggle.checked);
+});
+
+toggleLabel.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    navToggle.checked = !navToggle.checked;
+    navMenu.classList.toggle('open');
+    navMenu.classList.toggle('closed');
+    toggleLabel.setAttribute('aria-expanded', navToggle.checked);
+  }
+});
+</script>
 </body>
 </html>

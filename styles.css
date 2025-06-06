@@ -818,10 +818,18 @@ main li::before {
   content: "✔";
   color: #ff4500;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   top: 0;
   font-size: 1.2rem;
+}
+
+main li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 2rem;
+  text-align: left;
 }
 
 main img {
