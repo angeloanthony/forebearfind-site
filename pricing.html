@@ -82,9 +82,13 @@
 </div>
         </section>
     <div class="we-accept-container">
-    <img src="images/creditcards.jpg" alt="Accepted cards: Visa, Mastercard, AmEx, Discover" class="we-accept-img">
-    <p class="we-accept-caption">We accept Visa, Mastercard, AmEx, and Discover with SwipeSimple and Paypal</p>
+    <img src="images/creditcards.jpg" alt="Accepted cards: Visa, Mastercard, AmEx, Discover" class="we-accept-img" onclick="document.querySelector('.payment-buttons').scrollIntoView({ behavior: 'smooth' })">
+    <p class="we-accept-caption">We accept Visa, Mastercard, AmEx, and Discover with SwipeSimple and PayPal</p>
+    <div class="payment-buttons">
+        <a href="https://swipesimple.com/links/lnk_d615b6aa084c2b44fb3d64b17319d22d" target="_blank" class="payment-btn">Pay Now with SwipeSimple</a>
+        <div id="paypal-container-CUMKDLDX93SSY" class="paypal-btn"></div>
     </div>
+</div>
 
             <section>
     <h2>Flat-Rate Services</h2>

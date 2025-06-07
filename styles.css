@@ -920,52 +920,49 @@ main {
     font-size: 1.1rem;
   }
 }
+
 .payment-buttons {
-  display: flex;
-  flex-wrap: nowrap; /* Prevent wrapping to keep buttons side by side */
-  justify-content: center;
-  align-items: center; /* Vertically center the buttons */
-  gap: 1rem;
-  margin: 0.5rem 0; /* Reduce vertical margin to fit within the box */
-  width: 100%; /* Ensure it fits within the section */
-  box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to keep buttons side by side */
+    justify-content: center;
+    align-items: center; /* Vertically center the buttons */
+    gap: 1rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    max-width: 500px; /* Limit the width to prevent stretching */
+    box-sizing: border-box;
+    margin-left: auto; /* Center the container */
+    margin-right: auto;
 }
 
-.payment-btn.paypal-btn {
-  display: inline-block;
-  width: 200px; /* Fixed width to match SwipeSimple button */
-  height: 40px; /* Fixed height to match SwipeSimple button */
-  padding: 0; /* Remove padding */
-  background: none; /* Remove background */
-  text-decoration: none;
-  overflow: hidden; /* Prevent overflow */
+.paypal-btn {
+    display: block; /* Ensure the container is visible */
+    min-width: 200px; /* Give enough space for the PayPal button */
+    height: 40px; /* Match SwipeSimple button height */
+    overflow: hidden; /* Prevent overflow */
 }
-.payment-btn.paypal-btn:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+.paypal-btn:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
 #paypal-container-CUMKDLDX93SSY {
-  width: 200px !important; /* Match the parent container */
-  height: 40px !important; /* Match the parent container */
+    width: 100% !important; /* Ensure it takes the full width of the parent */
+    height: 100% !important; /* Ensure it takes the full height of the parent */
+    display: block !important; /* Ensure visibility */
 }
+
 #paypal-container-CUMKDLDX93SSY iframe {
-  width: 100% !important;
-  height: 100% !important;
-  border-radius: 6px !important; /* Match SwipeSimple button */
-}
-#paypal-container-CUMKDLDX93SSY iframe,
-#paypal-container-CUMKDLDX93SSY div,
-#paypal-container-CUMKDLDX93SSY button,
-#paypal-container-CUMKDLDX93SSY span {
-  font-size: 0 !important; /* Keep text hidden */
-  color: transparent !important; /* Keep text invisible */
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 6px !important; /* Match SwipeSimple button */
 }
 
-#paypal-container-CUMKDLDX93SSY {
-  margin-top: -25rem;
-  margin-left: 25rem; /* Move only the PayPal button up */
+.we-accept-img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.payment-text {
-  text-align: left;
+.we-accept-img:hover {
+    transform: scale(1.05);
 }
-
