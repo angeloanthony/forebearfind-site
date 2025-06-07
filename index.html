@@ -58,9 +58,8 @@
 
       <!-- Hidden checkbox for mobile nav toggle -->
       <input type="checkbox" id="nav-toggle" class="nav-toggle">
-
       <!-- Label acts as hamburger icon -->
-      <label for="nav-toggle" class="nav-toggle-label" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <label for="nav-toggle" class="nav-toggle-label" id="nav-toggle-label" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
       </label>
 
@@ -223,7 +222,7 @@
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
 // Navigation toggle
-const toggleLabel = document.getElementById('menu-toggle');
+const toggleLabel = document.getElementById('nav-toggle-label');
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.querySelector('.main-nav');
 
