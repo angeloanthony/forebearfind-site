@@ -205,8 +205,52 @@ p {
   top: 12px;
 }
 
-#nav-toggle:checked + .nav-toggle-label + .main-nav {
+#nav-toggle:checked ~ .main-nav {
   display: block;
+}
+
+/* Primary icon control via class (JavaScript-driven) */
+.nav-toggle-label.open span {
+  background: transparent;
+}
+
+.nav-toggle-label.open span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-toggle-label.open span::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.nav-toggle-label:not(.open) span {
+  background: #002b49;
+}
+
+.nav-toggle-label:not(.open) span::before {
+  transform: none;
+  top: -7px;
+}
+
+.nav-toggle-label:not(.open) span::after {
+  transform: none;
+  top: 7px;
+}
+
+/* Fallback for pages without updated JavaScript (use checkbox state) */
+.nav-toggle:not(:checked) ~ .nav-toggle-label span {
+  background: #002b49;
+}
+
+.nav-toggle:not(:checked) ~ .nav-toggle-label span::before {
+  transform: none;
+  top: -7px;
+}
+
+.nav-toggle:not(:checked) ~ .nav-toggle-label span::after {
+  transform: none;
+  top: 7px;
 }
 
 .nav-toggle:checked ~ .nav-toggle-label span {
@@ -522,7 +566,7 @@ p {
     justify-content: space-between;
     padding: 0.5rem;
     min-height: 60px;
-}
+  }
 
   .logo-left img {
     height: 60px; /* Smaller for mobile */
@@ -542,36 +586,82 @@ p {
 
   .nav-toggle-label {
   display: flex;
-  width: 15px;
-  height: 12px;
+  width: 15px; /* Increased width for better symmetry */
+  height: 25px; /* Your preferred height */
+  overflow: visible; /* Ensure rotated elements are not clipped */
 }
 
 .nav-toggle-label span,
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
-  height: 4px;
+  display: block;
+  background-color: #002b49;
+  height: 3px; /* Consistent height for clean lines */
+  width: 100%;
+  border-radius: 3px;
+  position: absolute;
+  transition: all 0.3s ease; /* Smooth animation */
+}
+
+.nav-toggle-label span {
+  top: 50%; /* Center the middle line */
+  transform: translateY(-50%); /* Vertically center */
+  width: 100%; /* Ensure full width */
 }
 
 .nav-toggle-label span::before {
-  top: -9px;
+  top: -8px; /* Even spacing above middle line */
+  content: '';
 }
 
 .nav-toggle-label span::after {
-  top: 9px;
+  top: 8px; /* Even spacing below middle line */
+  content: '';
 }
 
-  .main-nav {
-    display: none;
-    width: 100%;
-    background: #002b49;
-    padding: 1rem 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1001;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    min-height: 300px; /* Ensure enough space for all items */
-    overflow: visible; /* Prevent clipping */
+.nav-toggle-label.open span::before {
+  transform: rotate(45deg) translate(4px, 4px); /* Adjust position for symmetry */
+}
+
+.nav-toggle-label.open span::after {
+  transform: rotate(-45deg) translate(-4px, -4px); /* Opposite adjustment for symmetry */
+}
+
+.nav-toggle-label.open span::before,
+.nav-toggle-label.open span::after {
+  width: 100%; /* Reset width to avoid overextension */
+  left: 0; /* Center the lines without offset */
+  transform: rotate(45deg); /* Ensure consistent rotation */
+  transform-origin: 50% 50%; /* Center the rotation point */
+}
+
+.nav-toggle-label.open span::after {
+  transform: rotate(-45deg); /* Opposite rotation for X */
+}
+
+.nav-toggle-label.open span::before,
+.nav-toggle-label.open span::after {
+  width: 120%; /* Reduced width to avoid overextension */
+  left: -10%; /* Adjusted to center the X more evenly */
+  transform-origin: center; /* Ensure rotation is centered */
+}
+
+.nav-toggle-label.open span::before,
+.nav-toggle-label.open span::after {
+  width: 150%; /* Increase width for better X visibility */
+  left: -25%; /* Center the extended width */
+}
+
+.main-nav {
+  display: none;
+  width: 100%;
+  background: #002b49;
+  padding: 1rem 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1001;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav-toggle:checked ~ .main-nav {
@@ -579,29 +669,28 @@ p {
 }
 
   .nav-menu {
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-.nav-menu li {
-    display: block !important;
-    visibility: visible !important;
-}
+  .nav-menu li {
+    display: block;
+  }
 
-.nav-menu li a {
-  font-size: 1.2rem;
-  padding: 1rem;
-  width: 100%;
-  text-align: center;
-  color: white; /* White text for contrast on dark background */
-  transition: background-color 0.3s;
-}
+  .nav-menu li a {
+    font-size: 1.2rem;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    color: white;
+    transition: background-color 0.3s;
+  }
 
-.nav-menu li a:hover {
-  background-color: #ff1493; /* Darker pink on hover */
-  color: white;
-}
+  .nav-menu li a:hover {
+    background-color: #ff1493;
+    color: white;
+  }
 
   .hero-banner {
     height: 400px;
@@ -635,9 +724,9 @@ p {
   }
 
   .post img {
-        height: 300px;
-        object-position: top;
-    }
+    height: 300px;
+    object-position: top;
+  }
 
   .expertise-list {
     align-items: center;
@@ -992,4 +1081,3 @@ main {
 .we-accept-img:hover {
     transform: scale(1.05);
 }
-

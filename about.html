@@ -122,29 +122,56 @@
 </footer>
 
     <script async>
-// Update copyright year
-document.getElementById('current-year').textContent = new Date().getFullYear();
+  console.log("Script is running");
+  // Update copyright year
+  document.getElementById('current-year').textContent = new Date().getFullYear();
 
-// Navigation toggle
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.querySelector('.main-nav');
+  // Navigation toggle
+  let isToggled = false; // Manual state tracker
+  function setupToggle() {
+    const toggleLabel = document.getElementById('nav-toggle-label');
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('.main-nav');
 
-toggleLabel.addEventListener('click', () => {
-  navToggle.checked = !navToggle.checked;
-  navMenu.classList.toggle('open');
-  navMenu.classList.toggle('closed');
-  toggleLabel.setAttribute('aria-expanded', navToggle.checked);
-});
+    if (toggleLabel && navToggle && navMenu) {
+      console.log("Toggle elements found");
+      toggleLabel.addEventListener('click', () => {
+        console.log("Toggle clicked, before:", isToggled);
+        isToggled = !isToggled;
+        navToggle.checked = isToggled;
+        navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
+        if (isToggled) {
+          toggleLabel.classList.add('open');
+        } else {
+          toggleLabel.classList.remove('open');
+        }
+        console.log("Toggle clicked, after:", isToggled, "display:", navMenu.style.display);
+        toggleLabel.setAttribute('aria-expanded', isToggled);
+      });
 
-toggleLabel.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter' || event.key === ' ') {
-    event.preventDefault();
-    navToggle.checked = !navToggle.checked;
-    navMenu.classList.toggle('open');
-    navMenu.classList.toggle('closed');
-    toggleLabel.setAttribute('aria-expanded', navToggle.checked);
+      toggleLabel.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          console.log("Toggle keydown, before:", isToggled);
+          isToggled = !isToggled;
+          navToggle.checked = isToggled;
+          navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
+          if (isToggled) {
+            toggleLabel.classList.add('open');
+          } else {
+            toggleLabel.classList.remove('open');
+          }
+          console.log("Toggle keydown, after:", isToggled, "display:", navMenu.style.display);
+          toggleLabel.setAttribute('aria-expanded', isToggled);
+        }
+      });
+    } else {
+      console.log("Toggle elements not found, retrying in 100ms");
+      setTimeout(setupToggle, 100);
+    }
   }
-});
+
+  setupToggle(); // Initial call
 </script>
 </body>
 </html>

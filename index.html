@@ -217,79 +217,59 @@
     </div>
   </footer>
 
-  <script async>
-// Update copyright year
-document.getElementById('current-year').textContent = new Date().getFullYear();
+ <script async>
+  console.log("Script is running at", new Date().toLocaleString("en-US", { timeZone: "America/Denver" }));
+  // Update copyright year
+  document.getElementById('current-year').textContent = new Date().getFullYear();
 
-// Navigation toggle
-const toggleLabel = document.getElementById('nav-toggle-label');
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.querySelector('.main-nav');
+  // Navigation toggle
+  let isToggled = false; // Manual state tracker
+  function setupToggle() {
+    const toggleLabel = document.getElementById('nav-toggle-label');
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('.main-nav');
 
-toggleLabel.addEventListener('click', () => {
-  navToggle.checked = !navToggle.checked;
-  navMenu.classList.toggle('open');
-  navMenu.classList.toggle('closed');
-  toggleLabel.setAttribute('aria-expanded', navToggle.checked);
-});
+    if (toggleLabel && navToggle && navMenu) {
+      console.log("Toggle elements found at", new Date().toLocaleString("en-US", { timeZone: "America/Denver" }));
+      toggleLabel.addEventListener('click', () => {
+        console.log("Toggle clicked, before:", isToggled, "checked:", navToggle.checked, "class:", toggleLabel.className);
+        // Invert the logic to test reversal
+        isToggled = !isToggled;
+        navToggle.checked = !isToggled; // Invert checkbox to match desired icon state
+        navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
+        if (isToggled) {
+          toggleLabel.classList.add('open');
+        } else {
+          toggleLabel.classList.remove('open');
+        }
+        console.log("Toggle clicked, after:", isToggled, "checked:", navToggle.checked, "class:", toggleLabel.className, "display:", navMenu.style.display);
+        toggleLabel.setAttribute('aria-expanded', isToggled);
+      });
 
-toggleLabel.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter' || event.key === ' ') {
-    event.preventDefault();
-    navToggle.checked = !navToggle.checked;
-    navMenu.classList.toggle('open');
-    navMenu.classList.toggle('closed');
-    toggleLabel.setAttribute('aria-expanded', navToggle.checked);
+      toggleLabel.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          console.log("Toggle keydown, before:", isToggled, "checked:", navToggle.checked, "class:", toggleLabel.className);
+          isToggled = !isToggled;
+          navToggle.checked = !isToggled; // Invert checkbox to match desired icon state
+          navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
+          if (isToggled) {
+            toggleLabel.classList.add('open');
+          } else {
+            toggleLabel.classList.remove('open');
+          }
+          console.log("Toggle keydown, after:", isToggled, "checked:", navToggle.checked, "class:", toggleLabel.className, "display:", navMenu.style.display);
+          toggleLabel.setAttribute('aria-expanded', isToggled);
+        }
+      });
+    } else {
+      console.log("Toggle elements not found, retrying in 100ms at", new Date().toLocaleString("en-US", { timeZone: "America/Denver" }));
+      setTimeout(setupToggle, 100);
+    }
   }
-});
+
+  setupToggle(); // Initial call
 </script>
-
-  <!-- Commented out 3CX chat bubble styles
-  <style>
-    body .tcx-chat-bubble,
-    body #tcx-chat-container,
-    body #tcx-widget-container,
-    body [id*="tcx"],
-    body [class*="tcx"] {
-      transform: scale(1.4) !important;
-      bottom: 80px !important;
-      right: 30px !important;
-      z-index: 999999 !important;
-    }
-
-    body .tcx-chat-bubble::before,
-    body #tcx-chat-container::before,
-    body #tcx-widget-container::before,
-    body [id*="tcx"]::before,
-    body [class*="tcx"]::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      box-shadow: 0 0 12px rgba(255, 105, 180, 0.6);
-      animation: pulseGlow 2s infinite ease-in-out;
-      z-index: -1;
-    }
-
-    @keyframes pulseGlow {
-      0% { box-shadow: 0 0 8px rgba(255, 105, 180, 0.4); }
-      50% { box-shadow: 0 0 20px rgba(255, 105, 180, 0.8); }
-      100% { box-shadow: 0 0 8px rgba(255, 105, 180, 0.4); }
-    }
-
-    @media (max-width: 768px) {
-      body .tcx-chat-bubble,
-      body #tcx-chat-container,
-      body #tcx-widget-container,
-      body [id*="tcx"],
-      body [class*="tcx"] {
-        transform: scale(1.2) !important;
-        bottom: 20px !important;
-      }
-    }
-  </style>
-  -->
 
   <call-us-selector phonesystem-url="https://1888.3cx.cloud" party="forebearfind"></call-us-selector>
   <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
