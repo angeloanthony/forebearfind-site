@@ -83,7 +83,8 @@
     <div class="we-accept-container">
   <img src="images/creditcards.jpg" alt="Accepted cards: Visa, Mastercard, AmEx, Discover" 
        class="we-accept-img" onclick="document.querySelector('.payment-buttons').scrollIntoView({ behavior: 'smooth' })">
-  <p class="we-accept-caption">We accept Visa, Mastercard, AmEx, and Discover PayPal</p>
+  <p class="we-accept-caption">We accept Visa, Mastercard, AmEx, Discover, and PayPal
+</p>
   <div class="payment-buttons">
     <div id="paypal-container-CUMKDLDX93SSY" class="paypal-btn"></div>
   </div>
@@ -164,15 +165,18 @@
             </ul>
         </section>
 <section>
-    <h2>Ready to Begin?</h2>
-    <p class="payment-text">You can securely start your research project by choosing a payment method:</p>
+  <h2>Ready to Begin?</h2>
+  <p class="payment-text">You can securely start your research project by choosing a payment method:</p>
+  <div class="payment-buttons" style="margin-top: 1em;">
+    <div id="paypal-container-CUMKDLDX93SSY-2" class="paypal-btn"></div>
+  </div>
 </section>
 
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>© 2025 Forebear Find</p>
+            <p>© <span id="current-year"></span> Forebear Find</p>
             <p>Email: <a href="mailto:info@forebearfind.com">info@forebearfind.com</a> | Phone: <a href="tel:+14352195120">+1 (435) 219-5120</a></p>
             <p>Powered by <a href="https://cozelosdata.com/" target="_blank">cozelosdata</a> <a href="https://cozelosdata.com/" target="_blank"><img src="images/cozelos.png" alt="Cozelos Data Logo" style="vertical-align: middle; height: 20px; margin-left: 10px;"></a></p>
         </div>
@@ -237,9 +241,14 @@
                 console.error('PayPal SDK not loaded properly.');
                 return;
             }
-            paypal.HostedButtons({
-                hostedButtonId: "CUMKDLDX93SSY"
-            }).render('#paypal-container-CUMKDLDX93SSY');
+           paypal.HostedButtons({
+  hostedButtonId: "CUMKDLDX93SSY"
+}).render('#paypal-container-CUMKDLDX93SSY');
+
+paypal.HostedButtons({
+  hostedButtonId: "CUMKDLDX93SSY"
+}).render('#paypal-container-CUMKDLDX93SSY-2');
+
             console.log('PayPal button rendered successfully.');
         } catch (error) {
             console.error('Error rendering PayPal button:', error);
