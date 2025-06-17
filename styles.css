@@ -1157,8 +1157,18 @@ main {
   text-align: center;
 }
 
-section:nth-child(9) {
-  background-color: #f0f8ff;
-  padding: 2rem;
-  border-radius: 10px;
+.visually-hidden-seo {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.visually-hidden-seo {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
