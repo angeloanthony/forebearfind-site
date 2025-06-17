@@ -561,6 +561,12 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+.payment-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   .header-top {
     flex-direction: row;
     justify-content: space-between;
@@ -1144,4 +1150,15 @@ main {
 .sample-image:hover {
   transform: scale(1.1) translateY(-20px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.payment-text {
+  color: #333;
+  text-align: center;
+}
+
+section:nth-child(9) {
+  background-color: #f0f8ff;
+  padding: 2rem;
+  border-radius: 10px;
 }
