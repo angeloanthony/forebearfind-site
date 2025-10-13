@@ -13,13 +13,12 @@
   display: block;
 }
 
-
 html {
-  scroll-behavior: smooth; /* Enable smooth scrolling for anchor links */
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Comic Sans MS', 'Comic Neue', sans-serif; /* Add sans-serif as fallback */
+  font-family: 'Comic Sans MS', 'Comic Neue', sans-serif;
   line-height: 1.6;
   color: #333;
   background: #f0f8ff;
@@ -32,7 +31,7 @@ body {
 }
 
 h2, h3 {
-  color: #ff4500; /* Bright orange for headings */
+  color: #ff4500;
   font-family: 'Comic Sans MS', sans-serif;
 }
 
@@ -45,18 +44,18 @@ p {
   display: inline-block;
   margin-top: 15px;
   padding: 12px 24px;
-  background-color: #ff69b4; /* Hot pink button */
+  background-color: #ff69b4;
   color: white;
   text-decoration: none;
   border-radius: 5px;
   font-size: 18px;
   transition: background-color 0.3s ease;
-  min-width: 120px; /* Ensure buttons are touch-friendly */
+  min-width: 120px;
 }
 
 .btn:hover {
-  background-color: #ff1493; /* Darker pink on hover */
-  color: #000000; /* Black text for readability */
+  background-color: #ff1493;
+  color: #000000;
 }
 
 .btn:focus {
@@ -72,18 +71,20 @@ p {
   font-size: 1.5rem;
   text-align: center;
   font-weight: 600;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add subtle shadow for readability */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .container.header-top {
     display: flex;
     align-items: center;
-    justify-content: center;
-    max-width: 1200px;
+    justify-content: space-between;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 1rem;
-    gap: 1rem;
-    position: relative; /* Needed for absolute positioning of hamburger */
+    padding: 12px 20px; /* Increased padding for more breathing room */
+    gap: 1.5rem; /* Increased gap */
+    position: relative;
+    min-height: auto;
+    overflow: visible;
 }
 
 /* Header */
@@ -93,38 +94,54 @@ p {
   position: sticky;
   top: 0;
   z-index: 1000;
+  overflow: visible;
 }
 
 .logo-left {
   flex-shrink: 0;
   padding: 0;
+  z-index: 100;
+  position: relative;
 }
 
 .logo-left img {
-  height: 120px; /* Increased logo size */
+  height: 100px;
   width: auto;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+  position: relative;
+  z-index: 100;
+}
+
+.logo-left img:hover {
+  transform: scale(1.55) rotate(-2deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  /* Removed height change to prevent stretching */
 }
 
 .site-name-center {
     text-align: center;
     padding: 0 1rem;
-    flex: 1; /* Fa espandere il nome per occupare spazio */
+    flex: 0 1 auto;
 }
 
 .site-name {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 900;
   color: #002b49;
-  margin: 0; /* Remove default margin to avoid height increase */
+  margin: 0;
+  white-space: nowrap;
+  line-height: 1.2;
 }
 
-/* Navigation */
+/* Navigation - UPDATED FOR SINGLE LINE */
 .main-nav {
-  text-align: center;
-  padding: 1rem 0;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
 }
 
-/* Show menu when checkbox is checked */
 #nav-toggle:checked ~ .main-nav {
   display: block;
 }
@@ -133,33 +150,51 @@ p {
   display: none;
 }
 
-
 .nav-menu {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 0.5rem;
+  flex-wrap: nowrap;
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin: 0;
+  white-space: nowrap;
 }
 
 .nav-menu li a {
   text-decoration: none;
   color: #002b49;
   font-weight: 700;
-  font-size: 1.4rem;
-  padding: 0.5rem 1rem;
+  font-size: 1.55rem; /* Increased from 1.05rem */
+  padding: 8px 16px; /* Increased padding */
   display: inline-block;
-  transition: color 0.3s ease; /* Makes color change smooth */
+  transition: color 0.3s ease;
 }
 
 .nav-menu li a:hover {
-  color: #ff69b4; /* Hot pink on hover */
+  color: #ff69b4;
 }
 
 .nav-menu li a:focus {
   outline: 2px solid #ff69b4;
   outline-offset: 2px;
+}
+
+/* Medium screens - further reduce spacing */
+@media (max-width: 1200px) and (min-width: 769px) {
+  .nav-menu {
+    gap: 10px;
+  }
+  
+  .nav-menu li a {
+    font-size: 1.0rem; /* Increased from 0.95rem */
+    padding: 8px 12px;
+  }
 }
 
 .nav-toggle {
@@ -185,7 +220,7 @@ p {
 .nav-toggle-label span::after {
   display: block;
   background-color: #002b49;
-  height: 5px; /* Thicker lines for visibility */
+  height: 5px;
   width: 100%;
   border-radius: 3px;
   position: relative;
@@ -251,7 +286,7 @@ p {
 
 .nav-toggle:not(:checked) ~ .nav-toggle-label span::after {
   transform: none;
-  top: 7px;
+  top: -7px;
 }
 
 .nav-toggle:checked ~ .nav-toggle-label span {
@@ -279,7 +314,7 @@ p {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  overflow: visible; /* Allow image to pop outside */
+  overflow: visible;
   border-radius: 12px;
   z-index: 1;
 }
@@ -303,7 +338,7 @@ p {
   position: absolute;
   top: 2.5%;
   right: 1.25%;
-  background-color: rgba(0, 43, 73, 0.5); /* Slightly darker for readability */
+  background-color: rgba(0, 43, 73, 0.5);
   color: white;
   padding: 1.5rem;
   border-radius: 10px;
@@ -442,6 +477,38 @@ p {
   color: #333;
 }
 
+/* FAQ Section */
+.faq-section {
+  background: white;
+  padding: 3rem 0;
+}
+
+.faq-list {
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-left: 4px solid #ff69b4;
+  border-radius: 8px;
+}
+
+.faq-item h3 {
+  color: #002b49;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.faq-item p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+}
+
 /* Contact Section */
 .contact-page {
   background: white;
@@ -461,7 +528,7 @@ p {
   gap: 15px;
   max-width: 600px;
   margin: 2rem auto;
-  background-color: #f9f9f9; /* Light gray background for contrast */
+  background-color: #f9f9f9;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -503,7 +570,7 @@ p {
 .contact textarea:focus,
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border: 3px solid #ff69b4; /* Slightly thicker border on focus */
+  border: 3px solid #ff69b4;
   outline: 2px solid #ff69b4;
   outline-offset: 2px;
   box-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
@@ -524,7 +591,7 @@ p {
 
 .contact button.btn,
 .contact-form button.btn {
-  margin-top: 0; /* Remove default margin-top from .btn */
+  margin-top: 0;
 }
 
 /* Footer */
@@ -586,7 +653,7 @@ p {
   }
 
   .logo-left img {
-    height: 60px; /* Smaller for mobile */
+    height: 60px;
   }
 
   .site-name-center {
@@ -603,9 +670,9 @@ p {
 
   .nav-toggle-label {
   display: flex;
-  width: 15px; /* Increased width for better symmetry */
-  height: 25px; /* Your preferred height */
-  overflow: visible; /* Ensure rotated elements are not clipped */
+  width: 15px;
+  height: 25px;
+  overflow: visible;
 }
 
 .nav-toggle-label span,
@@ -613,60 +680,60 @@ p {
 .nav-toggle-label span::after {
   display: block;
   background-color: #002b49;
-  height: 3px; /* Consistent height for clean lines */
+  height: 3px;
   width: 100%;
   border-radius: 3px;
   position: absolute;
-  transition: all 0.3s ease; /* Smooth animation */
+  transition: all 0.3s ease;
 }
 
 .nav-toggle-label span {
-  top: 50%; /* Center the middle line */
-  transform: translateY(-50%); /* Vertically center */
-  width: 100%; /* Ensure full width */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
 }
 
 .nav-toggle-label span::before {
-  top: -8px; /* Even spacing above middle line */
+  top: -8px;
   content: '';
 }
 
 .nav-toggle-label span::after {
-  top: 8px; /* Even spacing below middle line */
+  top: 8px;
   content: '';
 }
 
 .nav-toggle-label.open span::before {
-  transform: rotate(45deg) translate(4px, 4px); /* Adjust position for symmetry */
+  transform: rotate(45deg) translate(4px, 4px);
 }
 
 .nav-toggle-label.open span::after {
-  transform: rotate(-45deg) translate(-4px, -4px); /* Opposite adjustment for symmetry */
-}
-
-.nav-toggle-label.open span::before,
-.nav-toggle-label.open span::after {
-  width: 100%; /* Reset width to avoid overextension */
-  left: 0; /* Center the lines without offset */
-  transform: rotate(45deg); /* Ensure consistent rotation */
-  transform-origin: 50% 50%; /* Center the rotation point */
-}
-
-.nav-toggle-label.open span::after {
-  transform: rotate(-45deg); /* Opposite rotation for X */
+  transform: rotate(-45deg) translate(-4px, -4px);
 }
 
 .nav-toggle-label.open span::before,
 .nav-toggle-label.open span::after {
-  width: 120%; /* Reduced width to avoid overextension */
-  left: -10%; /* Adjusted to center the X more evenly */
-  transform-origin: center; /* Ensure rotation is centered */
+  width: 100%;
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+}
+
+.nav-toggle-label.open span::after {
+  transform: rotate(-45deg);
 }
 
 .nav-toggle-label.open span::before,
 .nav-toggle-label.open span::after {
-  width: 150%; /* Increase width for better X visibility */
-  left: -25%; /* Center the extended width */
+  width: 120%;
+  left: -10%;
+  transform-origin: center;
+}
+
+.nav-toggle-label.open span::before,
+.nav-toggle-label.open span::after {
+  width: 150%;
+  left: -25%;
 }
 
 .main-nav {
@@ -710,7 +777,7 @@ p {
   }
 
   .hero-banner {
-    height: 4s00px;
+    height: 400px;
   }
 
   .hero-text {
@@ -845,15 +912,15 @@ p {
 
 /* Active Navigation Link */
 .main-nav .nav-menu li a.active {
-  font-weight: bold; /* Ensures it's bolder than the default 700 */
-  color: #ff69b4; /* Matches the hover color for consistency */
+  font-weight: bold;
+  color: #ff69b4;
 }
 
 /* Mobile Active State */
 @media (max-width: 768px) {
   .main-nav .nav-menu li a.active {
-    background-color: #ff69b4; /* Matches hover background */
-    color: white; /* White text for contrast */
+    background-color: #ff69b4;
+    color: white;
     font-weight: bold;
   }
   .main-nav.closed {
@@ -888,14 +955,14 @@ main section:active {
 .payment-btn {
   display: inline-block;
   padding: 10px 20px;
-  background: linear-gradient(to bottom, #ff69b4, #c71585); /* Stronger gradient from hot pink to a darker magenta */
-  color: white; /* White text */
+  background: linear-gradient(to bottom, #ff69b4, #c71585);
+  color: white;
   border-radius: 6px;
   text-decoration: none;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 .payment-btn:hover {
-  background: linear-gradient(to bottom, #c71585, #9e0d66); /* Even darker gradient on hover */
+  background: linear-gradient(to bottom, #c71585, #9e0d66);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   color: white;
 }
@@ -947,9 +1014,8 @@ main li {
   line-height: 1.8;
   margin-bottom: 0.75rem;
   position: relative;
-  margin-left: 0;
-  margin-right: 0;
-  text-align: center;
+  padding-left: 2rem;
+  text-align: left;
 }
 
 main li::before {
@@ -959,15 +1025,6 @@ main li::before {
   left: 0;
   top: 0;
   font-size: 1.2rem;
-}
-
-main li {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 0.75rem;
-  position: relative;
-  padding-left: 2rem;
-  text-align: left;
 }
 
 main img {
@@ -1061,23 +1118,23 @@ main {
 
 .payment-buttons {
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping to keep buttons side by side */
+    flex-wrap: nowrap;
     justify-content: center;
-    align-items: center; /* Vertically center the buttons */
+    align-items: center;
     gap: 1rem;
     margin: 0.5rem 0;
     width: 100%;
-    max-width: 500px; /* Limit the width to prevent stretching */
+    max-width: 500px;
     box-sizing: border-box;
-    margin-left: auto; /* Center the container */
+    margin-left: auto;
     margin-right: auto;
 }
 
 .paypal-btn {
-    display: block; /* Ensure the container is visible */
-    min-width: 200px; /* Give enough space for the PayPal button */
-    height: 40px; /* Match SwipeSimple button height */
-    overflow: hidden; /* Prevent overflow */
+    display: block;
+    min-width: 200px;
+    height: 40px;
+    overflow: hidden;
 }
 
 .paypal-btn:hover {
@@ -1085,15 +1142,15 @@ main {
 }
 
 #paypal-container-CUMKDLDX93SSY {
-    width: 100% !important; /* Ensure it takes the full width of the parent */
-    height: 100% !important; /* Ensure it takes the full height of the parent */
-    display: block !important; /* Ensure visibility */
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
 }
 
 #paypal-container-CUMKDLDX93SSY iframe {
     width: 100% !important;
     height: 100% !important;
-    border-radius: 6px !important; /* Match SwipeSimple button */
+    border-radius: 6px !important;
 }
 
 .we-accept-img {
@@ -1128,16 +1185,6 @@ main {
   text-align: center;
 }
 
-.logo-left img {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  will-change: transform;
-}
-
-.logo-left img:hover {
-  transform: scale(1.1) rotate(-1deg);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
 .sample-image {
   max-width: 100%;
   height: auto;
@@ -1155,14 +1202,6 @@ main {
 .payment-text {
   color: #333;
   text-align: center;
-}
-
-.visually-hidden-seo {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
 }
 
 .visually-hidden-seo {
