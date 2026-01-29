@@ -302,66 +302,93 @@ p {
   top: 0;
 }
 
-/* Hero Section */
+/* --- THE "NICE LOOK" LAYERED HERO --- */
+/* --- THE HERO BACKGROUND FIX --- */
 .hero-row {
-  position: relative;
-  padding: 2rem 1rem;
-  background: #f9f9f9;
+    /* 1. This is the exact line that inserts the picture */
+    background: url('images/two.png') no-repeat center center; 
+    
+    /* 2. This ensures the picture fills the whole section */
+    background-size: cover; 
+    
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-image-wrapper {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: visible;
-  border-radius: 12px;
-  z-index: 1;
+/* This adds a subtle fade so the text is easier to read */
+.hero-row::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.4); 
+    z-index: 1;
 }
 
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+.hero-split-container {
+    position: relative;
+    z-index: 2; /* Sits above the background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
-.hero-banner {
-  width: 100%;
-  height: 600px;
-  border-radius: 10px;
-  object-fit: cover;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+.hero-video-column {
+    flex: 0 1 400px;
 }
 
-/* Desktop Hero Text */
-.hero-text {
-  position: absolute;
-  top: 2.5%;
-  right: 1.25%;
-  background-color: rgba(0, 43, 73, 0.75);
-  color: white;
-  padding: 0.6rem 0.9rem;
-  border-radius: 10px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-  text-align: center;
-  max-width: 240px;
-  z-index: 1;
+/* The White "Polaroid" Frame for the Video */
+.video-aspect-ratio {
+    position: relative;
+    padding-bottom: 177.77%; /* Matches your vertical YouTube Short */
+    height: 0;
+    overflow: hidden;
+    
+    /* THE 3D EFFECT */
+    border: 12px solid white; /* Thick white 'photo' border */
+    border-radius: 20px;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.4), /* Deep shadow for height */
+        0 5px 10px rgba(0,0,0,0.2);  /* Subtle shadow for edge detail */
+    
+    transform: perspective(1000px) rotateY(2deg) rotateX(-3deg) rotate(-2deg);
+    transition: transform 0.5s ease; /* Smooth movement when hovered */
+    z-index: 5;
 }
 
-.hero-text h1 {
-  font-family: 'Times New Roman', serif;
-  font-size: 1.75rem;
-  margin-bottom: 0.2rem;
-  font-weight: 700;
-  line-height: 1.15;
+/* Adds interactive movement when you mouse over it */
+.video-aspect-ratio:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) rotate(0deg) scale(1.02);
 }
 
-.hero-text p {
-  font-family: 'Times New Roman', serif;
-  font-size: 1.25rem;
-  margin: 0.1rem 0;
-  color: white;
-  line-height: 1.2;
+.video-aspect-ratio iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border: 0;
+}
+
+.hero-info-column {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* The Floating White Info Box */
+.info-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.record-tag {
+    background: #fff;
+    border-left: 5px solid #ff4500;
+    padding: 10px;
+    margin: 8px 0;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 
 /* Welcome Section */
@@ -1244,10 +1271,4 @@ main {
 .detective-frame {
   position: relative;
   display: inline-block;
-}X93SSY {
-    width: 100% !important;
-    height: 100% !important;
-    display: block !important;
 }
-
-#paypal-container-CUMKDLD
