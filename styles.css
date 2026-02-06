@@ -391,40 +391,6 @@ p {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 
-/* Welcome Section */
-.welcome {
-  background: white;
-  padding: 3rem 0;
-  text-align: center;
-}
-
-.welcome .signature {
-  margin-top: 1rem;
-  font-style: italic;
-  font-weight: bold;
-}
-
-.expertise-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  text-align: left;
-  align-items: flex-start;
-}
-
-.expertise-item {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-}
-
-.expertise-item .icon {
-  font-size: 2.8rem;
-  flex-shrink: 0;
-  margin-top: 3px;
-}
-
 /* Services Section */
 .services {
   background-color: #f0f8ff;
@@ -1271,4 +1237,208 @@ main {
 .detective-frame {
   position: relative;
   display: inline-block;
+}
+
+/* Story Showcase Section - Large Landscape Video */
+.story-showcase {
+  background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-showcase::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,105,180,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+/* Wide container for more space */
+.story-container-wide {
+  width: 95%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.story-grid-landscape {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Video takes 66%, text takes 33% */
+  gap: 50px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.story-video-column-landscape {
+  position: relative;
+  width: 100%;
+}
+
+.story-video-frame-landscape {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border: 16px solid white;
+  border-radius: 20px;
+  box-shadow: 
+    0 20px 50px rgba(0,0,0,0.3),
+    0 10px 20px rgba(0,0,0,0.15);
+  transform: perspective(1500px) rotateY(-5deg) rotateX(3deg);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.story-video-frame-landscape:hover {
+  transform: perspective(1500px) rotateY(0deg) rotateX(0deg) scale(1.03);
+  box-shadow: 
+    0 25px 60px rgba(0,0,0,0.35),
+    0 15px 30px rgba(0,0,0,0.2);
+}
+
+.story-video-frame-landscape iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.story-message-column-landscape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  border-left: 6px solid #ff4500;
+  width: 100%;
+}
+
+.story-headline {
+  font-size: 2.5rem;
+  color: #ff4500;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.story-tagline {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.story-features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.feature-badge {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f9f9f9;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border-left: 4px solid #ff69b4;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-badge:hover {
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.badge-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.badge-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #002b49;
+}
+
+.message-card .signature {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-weight: bold;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .story-grid-landscape {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+@media (max-width: 1200px) {
+  .story-grid-landscape {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+  }
+  
+  .story-headline {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .story-grid-landscape {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .story-video-frame-landscape {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .story-headline {
+    font-size: 2rem;
+  }
+
+  .story-tagline {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-showcase {
+    padding: 40px 0;
+  }
+
+  .message-card {
+    padding: 25px;
+  }
+
+  .story-headline {
+    font-size: 1.6rem;
+  }
+
+  .story-tagline {
+    font-size: 1rem;
+  }
+
+  .badge-text {
+    font-size: 0.95rem;
+  }
 }
