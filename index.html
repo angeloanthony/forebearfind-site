@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="7TnQ_J9i53PFlwcNw1vzvpyX_9giOLNRbT79H7t6-jA" />
+  <meta name="google-site-verification" content="7TnQ_J9i53PFlwcNw1vzvpyX_9giOLNRbT79H7t6-jA">
   <meta name="description" content="Expert Italian ancestry research and genealogy services. Forebear Find helps you trace your Italian roots, obtain dual citizenship documents, and uncover your family history with access to vital records from Italy and beyond.">
   <meta name="keywords" content="Italian ancestry research, Italian dual citizenship genealogy, European genealogy, Italian family history, genealogy services, Italian birth certificates, Italian immigration records, trace Italian roots, Italian vital records, heritage research, family tree, noble lineage, Italian citizenship documents">
   <meta name="author" content="Rocco DeLuca, Forebear Find">
@@ -167,12 +167,13 @@
         <span class="site-name">Forebear Find</span>
       </div>
 
-      <!-- Hidden checkbox for mobile nav toggle -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <!-- Label acts as hamburger icon -->
-      <label for="nav-toggle" class="nav-toggle-label" id="nav-toggle-label" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span>
-      </label>
+<!-- Hidden checkbox for mobile nav toggle -->
+<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+
+<label for="nav-toggle" class="nav-toggle-label" id="nav-toggle-label">
+  <span></span>
+  <span class="visually-hidden">Toggle navigation</span>
+</label>
 
       <!-- Main navigation -->
       <nav class="main-nav" aria-label="Main Navigation">
@@ -233,7 +234,6 @@
           <iframe 
             src="https://www.youtube.com/embed/YTft1xM1cto" 
             title="YouTube video player" 
-            frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen>
@@ -383,35 +383,32 @@
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
     // Navigation toggle
-    let isToggled = false;
-    function setupToggle() {
-      const toggleLabel = document.getElementById('nav-toggle-label');
-      const navToggle = document.getElementById('nav-toggle');
-      const navMenu = document.querySelector('.main-nav');
+  function setupToggle() {
+    const toggleLabel = document.getElementById('nav-toggle-label');
+    const navToggle = document.getElementById('nav-toggle'); // This is the checkbox
+    const navMenu = document.querySelector('.main-nav');
 
-      if (toggleLabel && navToggle && navMenu) {
-        toggleLabel.addEventListener('click', () => {
-          isToggled = !isToggled;
-          navToggle.checked = !isToggled;
-          navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
-          toggleLabel.classList.toggle('open', isToggled);
-          toggleLabel.setAttribute('aria-expanded', isToggled);
-        });
+    if (toggleLabel && navToggle && navMenu) {
+      toggleLabel.addEventListener('click', () => {
+        isToggled = !isToggled;
+        // navToggle.checked = isToggled; // Fixed logic: should match isToggled
+        navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
+        toggleLabel.classList.toggle('open', isToggled);
+        
+        // UPDATE: Change the attribute on the checkbox, not the label
+        navToggle.setAttribute('aria-expanded', isToggled);
+      });
 
-        toggleLabel.addEventListener('keydown', (event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            isToggled = !isToggled;
-            navToggle.checked = !isToggled;
-            navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
-            toggleLabel.classList.toggle('open', isToggled);
-            toggleLabel.setAttribute('aria-expanded', isToggled);
-          }
-        });
-      } else {
-        setTimeout(setupToggle, 100);
-      }
+      toggleLabel.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleLabel.click(); // Trigger the click listener above
+        }
+      });
+    } else {
+      setTimeout(setupToggle, 100);
     }
+  }
 
     setupToggle();
   </script>
