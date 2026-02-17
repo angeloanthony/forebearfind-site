@@ -142,9 +142,7 @@
             <div class="site-name-center">
                 <span class="site-name">Forebear Find</span>
             </div>
-            <!-- Hidden checkbox for mobile nav toggle -->
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <!-- Label acts as hamburger icon -->
+         <!-- Label acts as hamburger icon -->
            <button type="button" 
           class="nav-toggle-label" 
           id="nav-toggle-label" 
@@ -154,7 +152,7 @@
           <span></span>
          </button>
             <!-- Main navigation -->
-            <nav class="main-nav" aria-label="Main Navigation">
+          <nav class="main-nav" id="nav-menu" aria-label="Main Navigation">
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -317,39 +315,35 @@
 
       // Navigation toggle
       let isToggled = false;
-      function setupToggle() {
-        const toggleLabel = document.getElementById('nav-toggle-label');
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.querySelector('.main-nav');
+  function setupToggle() {
+    const toggleLabel = document.getElementById('nav-toggle-label');
+    const navMenu = document.getElementById('nav-menu'); // Using the new ID
 
-        if (toggleLabel && navToggle && navMenu) {
-          toggleLabel.addEventListener('click', () => {
-            isToggled = !isToggled;
-            navToggle.checked = !isToggled;
-            navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
-            toggleLabel.classList.toggle('open', isToggled);
-            toggleLabel.setAttribute('aria-expanded', isToggled);
-          });
+    if (toggleLabel && navMenu) {
+      const toggleAction = () => {
+        isToggled = !isToggled;
+        // Control visibility
+        navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
+        // Update visual state and ARIA
+        toggleLabel.classList.toggle('open', isToggled);
+        toggleLabel.setAttribute('aria-expanded', isToggled);
+      };
 
-          toggleLabel.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-              event.preventDefault();
-              isToggled = !isToggled;
-              navToggle.checked = !isToggled;
-              navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
-              toggleLabel.classList.toggle('open', isToggled);
-              toggleLabel.setAttribute('aria-expanded', isToggled);
-            }
-          });
-        } else {
-          setTimeout(setupToggle, 100);
+      toggleLabel.addEventListener('click', toggleAction);
+      toggleLabel.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleAction();
         }
-      }
-
-      setupToggle();
+      });
+    } else {
+      setTimeout(setupToggle, 100);
+    }
+  }
+  setupToggle();
     </script>
 
     <call-us-selector phonesystem-url="https://1888.3cx.cloud" party="forebearfind"></call-us-selector>
-    <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
+    <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js"></script>
 </body>
 </html>
