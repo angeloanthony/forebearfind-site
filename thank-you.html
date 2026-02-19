@@ -58,20 +58,25 @@
             <div class="site-name-center">
                 <span class="site-name">Forebear Find</span>
             </div>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
-                <span></span>
-            </label>
-            <nav class="main-nav">
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="portfolio.html">Research Portfolio</a></li>
-                    <li><a href="faq.html">FAQ</a></li>                   
-                </ul>
-            </nav>
+    <button type="button" 
+              class="nav-toggle-label" 
+              id="nav-toggle-label" 
+              aria-controls="nav-menu" 
+              aria-expanded="false" 
+              aria-label="Toggle navigation">
+        <span></span>
+      </button>
+      
+      <nav class="main-nav" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="portfolio.html">Research Portfolio</a></li>
+          <li><a href="faq.html">FAQ</a></li>                    
+        </ul>
+      </nav>
         </div>
     </header>
 
@@ -87,7 +92,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2025 Forebear Find. All Rights Reserved.</p>
+            <p>© <span id="current-year">2025</span> Forebear Find. All Rights Reserved.</p>
             <p>Email: <a href="mailto:info@forebearfind.com">info@forebearfind.com</a> | Phone: <a href="tel:+14352195120">+1 (435) 219-5120</a></p>
             <p>Powered by <a href="https://cozelosdata.com/" target="_blank">cozelosdata</a> <a href="https://cozelosdata.com/" target="_blank"><img src="images/cozelos.png" alt="Cozelos Data Logo" style="vertical-align: middle; height: 20px; margin-left: 10px;"></a></p>
         </div>
@@ -99,51 +104,39 @@
   document.getElementById('current-year').textContent = new Date().getFullYear();
 
   // Navigation toggle
-  let isToggled = false; // Manual state tracker
+ // Navigation toggle
+  let isToggled = false;
   function setupToggle() {
-    const toggleLabel = document.getElementById('nav-toggle-label');
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.querySelector('.main-nav');
+    const toggleButton = document.getElementById('nav-toggle-label');
+    const navMenu = document.getElementById('nav-menu');
 
-    if (toggleLabel && navToggle && navMenu) {
-      console.log("Toggle elements found");
-      toggleLabel.addEventListener('click', () => {
-        console.log("Toggle clicked, before:", isToggled);
+    if (toggleButton && navMenu) {
+      const toggleAction = () => {
         isToggled = !isToggled;
-        navToggle.checked = isToggled;
+        // Control visibility
         navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
-        if (isToggled) {
-          toggleLabel.classList.add('open');
-        } else {
-          toggleLabel.classList.remove('open');
-        }
-        console.log("Toggle clicked, after:", isToggled, "display:", navMenu.style.display);
-        toggleLabel.setAttribute('aria-expanded', isToggled);
-      });
+        // Update visual state and ARIA
+        toggleButton.classList.toggle('open', isToggled);
+        toggleButton.setAttribute('aria-expanded', isToggled);
+      };
 
-      toggleLabel.addEventListener('keydown', (event) => {
+      toggleButton.addEventListener('click', toggleAction);
+      toggleButton.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          console.log("Toggle keydown, before:", isToggled);
-          isToggled = !isToggled;
-          navToggle.checked = isToggled;
-          navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
-          if (isToggled) {
-            toggleLabel.classList.add('open');
-          } else {
-            toggleLabel.classList.remove('open');
-          }
-          console.log("Toggle keydown, after:", isToggled, "display:", navMenu.style.display);
-          toggleLabel.setAttribute('aria-expanded', isToggled);
+          toggleAction();
         }
       });
     } else {
-      console.log("Toggle elements not found, retrying in 100ms");
       setTimeout(setupToggle, 100);
     }
   }
 
-  setupToggle(); // Initial call
+  // Update copyright year
+  const yearSpan = document.getElementById('current-year');
+  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+  setupToggle();
 </script>
 </body>
 </html>

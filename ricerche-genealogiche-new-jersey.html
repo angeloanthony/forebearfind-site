@@ -148,20 +148,24 @@
             <div class="site-name-center">
                 <span class="site-name">Forebear Find</span>
             </div>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label" aria-label="Attiva/disattiva navigazione">
-                <span></span>
-            </label>
-            <nav class="main-nav" aria-label="Navigazione Principale">
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Chi Siamo</a></li>
-                    <li><a href="services.html" class="active">Servizi</a></li>
-                    <li><a href="pricing.html">Prezzi</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="faq.html">FAQ</a></li>                    
-                </ul>
-            </nav>
+    <button type="button" 
+          class="nav-toggle-label" 
+          id="nav-toggle-label" 
+          aria-controls="nav-menu" 
+          aria-expanded="false" 
+          aria-label="Attiva/disattiva navigazione">
+    <span></span>
+  </button>
+  <nav class="main-nav" id="nav-menu" aria-label="Navigazione Principale">
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Chi Siamo</a></li>
+      <li><a href="services.html" class="active">Servizi</a></li>
+      <li><a href="pricing.html">Prezzi</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="faq.html">FAQ</a></li>                    
+    </ul>
+  </nav>
         </div>
     </header>
 
@@ -431,40 +435,37 @@
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        let isToggled = false;
-        function setupToggle() {
-            const toggleLabel = document.querySelector('.nav-toggle-label');
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.querySelector('.main-nav');
+       // Gestione navigazione mobile
+  let isToggled = false;
+  function setupToggle() {
+    const toggleButton = document.getElementById('nav-toggle-label');
+    const navMenu = document.getElementById('nav-menu');
 
-            if (toggleLabel && navToggle && navMenu) {
-                toggleLabel.addEventListener('click', () => {
-                    isToggled = !isToggled;
-                    navToggle.checked = isToggled;
-                    navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
-                    toggleLabel.classList.toggle('open', isToggled);
-                    toggleLabel.setAttribute('aria-expanded', isToggled);
-                });
+    if (toggleButton && navMenu) {
+      const toggleAction = () => {
+        isToggled = !isToggled;
+        // Controllo visibilità con override CSS
+        navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
+        // Aggiornamento stato visivo (hamburger) e accessibilità
+        toggleButton.classList.toggle('open', isToggled);
+        toggleButton.setAttribute('aria-expanded', isToggled);
+      };
 
-                toggleLabel.addEventListener('keydown', (event) => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        event.preventDefault();
-                        isToggled = !isToggled;
-                        navToggle.checked = isToggled;
-                        navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
-                        toggleLabel.classList.toggle('open', isToggled);
-                        toggleLabel.setAttribute('aria-expanded', isToggled);
-                    }
-                });
-            } else {
-                setTimeout(setupToggle, 100);
-            }
+      toggleButton.addEventListener('click', toggleAction);
+      toggleButton.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleAction();
         }
-
-        setupToggle();
+      });
+    } else {
+      setTimeout(setupToggle, 100);
+    }
+  }
+  setupToggle();
     </script>
     
     <call-us-selector phonesystem-url="https://1888.3cx.cloud" party="forebearfind"></call-us-selector>
-    <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
+    <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js"></script>
 </body>
 </html>
