@@ -33,10 +33,12 @@
     <link rel="icon" href="images/ForebearFindLogo1.png" type="image/png">
     <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
 
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="styles.css">
-    
+
     <!-- Enhanced Service Schema -->
     <script type="application/ld+json">
 {
@@ -56,294 +58,424 @@
       "addressRegion": "UT",
       "postalCode": "84078",
       "addressCountry": "US"
-    },
-    "sameAs": [
-      "https://www.facebook.com/forebearfind",
-      "https://www.instagram.com/forebearfind",
-      "https://www.linkedin.com/company/forebearfind"
-    ]
+    }
   },
-  "areaServed": {
-    "@type": "Country",
-    "name": "United States"
-  },
+  "areaServed": { "@type": "Country", "name": "United States" },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Genealogy Research Services",
     "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Italian Dual Citizenship Research",
-          "description": "Complete genealogy research for Italian citizenship by descent (jure sanguinis) including vital records retrieval, translations, and apostilles"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Italian Vital Records Retrieval",
-          "description": "Birth, marriage, and death certificate procurement from Italian municipalities with proper certifications"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "African American Genealogy Research",
-          "description": "Specialized ancestry research using Freedmen's Bureau records, plantation documents, and post-emancipation records"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "European Ancestry Research",
-          "description": "Comprehensive family history research across Italy, Ireland, Scotland, and Eastern Europe"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Custom Family History Books",
-          "description": "Professionally written and designed family narratives and ancestry documents"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Immigration Records Research",
-          "description": "Ellis Island records, ship manifests, naturalization papers, and passenger lists"
-        }
-      }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Italian Dual Citizenship Research", "description": "Complete genealogy research for Italian citizenship by descent (jure sanguinis)" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Italian Vital Records Retrieval", "description": "Birth, marriage, and death certificate procurement from Italian municipalities" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "African American Genealogy Research", "description": "Specialized ancestry research using Freedmen's Bureau records and post-emancipation documents" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "European Ancestry Research", "description": "Comprehensive family history research across Italy, Ireland, Scotland, and Eastern Europe" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Family History Books", "description": "Professionally written and designed family narratives and ancestry documents" } }
     ]
   }
 }
 </script>
+
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <span>📧 info@forebearfind.com</span>
-            <span>📞 +1 (435) 219-5120</span>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📧 info@forebearfind.com</span>
+      <span>📞 +1 (435) 219-5120</span>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container header-top">
+      <div class="logo-left">
+        <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Italian Genealogy Logo" width="80" height="80"></a>
+      </div>
+      <div class="site-name-center">
+        <span class="site-name">Forebear Find</span>
+      </div>
+
+      <button type="button"
+              class="nav-toggle-label"
+              id="nav-toggle-label"
+              aria-controls="nav-menu"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span></span>
+      </button>
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <a href="services.html" class="lang-btn lang-active">English</a>
+        <a href="services-it.html" class="lang-btn">Italian</a>
+      </div>
+
+      <nav class="main-nav" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="portfolio.html">Research Portfolio</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="services-page-main">
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="services-hero">
+      <div class="services-hero-content">
+        <h1>Discover Your Roots</h1>
+        <p>Expert genealogy research that brings your family's story to life — from Italian archives to American immigration records.</p>
+        <a href="pricing.html" class="btn">View Pricing & Packages</a>
+        <a href="index.html#contact" class="btn" style="background:#002b49; margin-left:10px;">Book Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- ══════════ INTRO VIDEO + TEXT ══════════ -->
+    <div class="intro-video-row">
+      <div class="vid-wrap">
+        <div class="vid-frame-3d">
+          <div class="placeholder-video">
+            <span class="ph-icon">▶</span>
+            <span>Intro Video — Replace with YouTube embed</span>
+          </div>
+          <!-- When you have a real video, replace the div above with:
+          <iframe src="https://www.youtube.com/embed/YOUR_ID"
+            title="Forebear Find Introduction"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          -->
         </div>
+      </div>
+      <div class="intro-text">
+        <h2>Genealogy That Tells a Story</h2>
+        <p>At Forebear Find, we don't just find names and dates. We uncover the stories, struggles, and triumphs that define your heritage — and deliver them in formats your family will treasure for generations.</p>
+        <p>From a single Italian birth certificate to a comprehensive multi-generational narrative, every project is personalized to your goals.</p>
+        <a href="pricing.html" class="btn">Explore Our Packages</a>
+      </div>
     </div>
 
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="container header-top">
-            <div class="logo-left">
-                <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Italian Genealogy Logo" width="100" height="100"></a>
-            </div>
-            <div class="site-name-center">
-                <span class="site-name">Forebear Find</span>
-            </div>
-         <!-- Label acts as hamburger icon -->
-           <button type="button" 
-          class="nav-toggle-label" 
-          id="nav-toggle-label" 
-          aria-controls="nav-menu" 
-          aria-expanded="false" 
-          aria-label="Toggle navigation">
-          <span></span>
-         </button>
-            <!-- Main navigation -->
-          <nav class="main-nav" id="nav-menu" aria-label="Main Navigation">
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="faq.html">FAQ</a></li>                    
-                </ul>
-            </nav>
+    <!-- ══════════ SERVICE CARDS ══════════ -->
+    <div class="services-grid-heading">
+      <h2>Our Services</h2>
+      <p>Click any card to see exactly what's included.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Card 1: Italian Dual Citizenship -->
+      <div class="service-card" onclick="this.classList.toggle('expanded')">
+        <div class="service-card-media">
+          <div class="placeholder-img">
+            <span class="ph-icon">🇮🇹</span>
+            <span>Italian Archive Photo</span>
+          </div>
+          <span class="service-card-tag">Most Popular</span>
         </div>
-    </header>
-
-    <main>
-        <section>
-            <h2>Professional Genealogy & Ancestry Research Services</h2>
-            <p>At <span class="highlight">Forebear Find</span>, we provide comprehensive genealogy research services specializing in Italian ancestry, African American family history, and European lineages. Our expert research helps you discover your roots, obtain vital records for dual citizenship applications, and preserve your family's story for future generations.</p>
-        </section>
-
-        <section>
-            <h2>Italian Dual Citizenship Research Services</h2>
-            <p>Our Italian dual citizenship research service is designed specifically for individuals pursuing Italian citizenship by descent (jure sanguinis). We handle the complete genealogical research process including:</p>
+        <div class="service-card-body">
+          <h3>Italian Dual Citizenship Research</h3>
+          <p>Complete jure sanguinis research — from tracing your Italian bloodline to a consulate-ready documentation package.</p>
+          <div class="service-card-details">
             <ul>
-                <li>Tracing your Italian lineage to establish unbroken bloodline from Italian ancestor to you</li>
-                <li>Retrieving certified birth, marriage, and death certificates from Italian comuni (municipalities)</li>
-                <li>Obtaining documents from Italian state archives (Archivi di Stato) and parish churches</li>
-                <li>Securing apostilles and official translations for all Italian documents</li>
-                <li>Locating U.S. naturalization records to verify citizenship eligibility</li>
-                <li>Compiling complete documentation packages for consular or court applications</li>
+              <li>Lineage verification from Italian ancestor to you</li>
+              <li>Certified vital records from Italian comuni</li>
+              <li>Documents from Archivi di Stato &amp; parish churches</li>
+              <li>Apostilles and certified translations</li>
+              <li>U.S. naturalization records research</li>
+              <li>Complete consular or court application packages</li>
             </ul>
-            <p>We work across all 20 Italian regions and have extensive experience navigating Italian bureaucracy, language barriers, and complex record-keeping systems. Whether your ancestors came from Sicily, Lombardy, Campania, or any other Italian region, we can help you obtain the documents you need.</p>
-        </section>
-
-        <section>
-            <h2>Italian Vital Records Retrieval</h2>
-            <p>Need Italian birth certificates, marriage records, or death certificates for family research or legal purposes? We provide professional vital records retrieval services including:</p>
-            <ul>
-                <li>Birth certificates (certificati di nascita) from Italian civil records offices</li>
-                <li>Marriage certificates (certificati di matrimonio) with proper annotations</li>
-                <li>Death certificates (certificati di morte) and death records</li>
-                <li>Church baptism, marriage, and burial records from Italian parishes</li>
-                <li>Official translations from Italian to English by certified translators</li>
-                <li>Apostille services for international legal recognition</li>
-            </ul>
-            <p>Each document is obtained directly from the appropriate Italian government office or archive, ensuring authenticity and legal validity for all purposes including citizenship applications, genealogical research, and legal proceedings.</p>
-        </section>
-
-        <section>
-            <h2>African American Genealogy Research</h2>
-            <p>African American family history research requires specialized knowledge and techniques due to the unique challenges of tracing ancestors through slavery and reconstruction. Our services include:</p>
-            <ul>
-                <li>Freedmen's Bureau records research (labor contracts, marriage records, school records)</li>
-                <li>Pre-1870 census and slave schedule analysis</li>
-                <li>Plantation records and slaveholder documentation</li>
-                <li>Post-emancipation vital records and county courthouse research</li>
-                <li>African American newspaper archives and church records</li>
-                <li>Military service records (Civil War, Buffalo Soldiers, WWI, WWII)</li>
-                <li>Migration pattern tracking from the South to northern and western states</li>
-            </ul>
-            <p>We approach African American genealogy with cultural sensitivity and historical expertise, honoring your ancestors' resilience and preserving their stories for future generations.</p>
-        </section>
-
-        <section>
-            <h2>European Ancestry & Immigration Research</h2>
-            <p>Beyond Italy, we trace European ancestry across multiple countries and help document your family's immigration journey to America:</p>
-            <ul>
-                <li>Irish and Scottish ancestry research using civil records and church registers</li>
-                <li>Eastern European genealogy (Poland, Ukraine, Czech Republic, Hungary)</li>
-                <li>German, Austrian, and Swiss family history research</li>
-                <li>Ellis Island immigration records and ship passenger manifests</li>
-                <li>U.S. naturalization and citizenship papers</li>
-                <li>Port of entry records (New York, Boston, Philadelphia, Baltimore, New Orleans)</li>
-                <li>Multi-generational family tree construction spanning continents</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Custom Family History Narratives</h2>
-            <p>Transform your genealogical research into beautifully written family stories that bring your ancestors to life:</p>
-            <ul>
-                <li>Professionally written family history books with historical context</li>
-                <li>Ancestral biographies highlighting individual lives and achievements</li>
-                <li>Immigration journey narratives documenting your family's path to America</li>
-                <li>Military service histories honoring veteran ancestors</li>
-                <li>Photo restoration and integration with written narratives</li>
-                <li>Print-ready PDFs or professionally bound books</li>
-            </ul>
-            <p>Our custom narratives combine meticulous research with compelling storytelling, creating heirloom-quality documents your family will treasure for generations.</p>
-        </section>
-
-        <section>
-            <h2>Comprehensive Genealogy Research Packages</h2>
-            <p>Not sure where to start? Our comprehensive research packages include:</p>
-            <ul>
-                <li>Complete family tree construction (4-6 generations)</li>
-                <li>Document procurement from multiple repositories</li>
-                <li>Historical context research (where ancestors lived, worked, and worshipped)</li>
-                <li>DNA analysis interpretation and genetic genealogy consultation</li>
-                <li>Breaking through genealogical brick walls and solving family mysteries</li>
-                <li>Descendancy research to find living relatives</li>
-                <li>Property and land records research</li>
-                <li>Probate records, wills, and estate documents</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>How Our Genealogy Services Work</h2>
-            <img src="images/howwehelp.webp" alt="Genealogist researching family history documents and building detailed family tree" width="500" height="333" loading="lazy" class="sample-image" style="max-width: 500px; width: 100%; height: auto; display: block; margin: 20px auto;">
-            <p>Our research process is personalized and collaborative. After an initial consultation to understand your goals, we develop a customized research plan. We then conduct thorough archival research, obtain necessary documents, and present our findings in clear, organized formats. Throughout the process, we maintain communication and can adjust our approach based on discoveries and your evolving interests.</p>
-            <p>Whether you need a single Italian birth certificate or a comprehensive multi-generational family history, we tailor our services to meet your specific needs and budget.</p>
-        </section>
-
-        <section>
-            <h2>Sample Research Deliverables</h2>
-            <img src="images/oldfamilyphotos.webp" alt="Professional genealogy research deliverables including family tree charts and historical photographs" width="600" height="400" loading="lazy" class="sample-image">
-            <p>Our deliverables include detailed family trees, ancestor profile sheets, timeline documents, certified vital records with translations, research reports explaining our methodology and findings, and beautifully crafted family narratives. Each document is professionally formatted and suitable for sharing with family members, submitting to government agencies, or preserving as cherished family heirlooms.</p>
-        </section>
-
-        <section>
-            <h2>Why Choose Forebear Find for Your Genealogy Research</h2>
-            <ul>
-                <li>Specialized expertise in Italian vital records systems and dual citizenship requirements</li>
-                <li>Direct experience working with Italian government offices and archives</li>
-                <li>Professional training in African American genealogy research methods</li>
-                <li>Access to extensive genealogical databases and international record repositories</li>
-                <li>Personalized research approach tailored to your family's unique history</li>
-                <li>Clear communication and transparent project updates</li>
-                <li>Flexible pricing options to fit various budgets and research goals</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Get Started with Your Genealogy Research Today</h2>
-            <p>Ready to discover your family's story? Contact us today for a free consultation. We'll discuss your genealogy goals, answer your questions, and create a customized research plan to help you uncover your heritage and preserve your family's legacy.</p>
-            <a href="pricing.html" class="btn">View Service Pricing</a>
-            <a href="index.html#contact" class="btn" style="margin-left: 1rem;">Schedule Free Consultation</a>
-        </section>
-
-        <section class="visually-hidden-seo">
-            <h2>Regional Genealogy Services</h2>
-            <ul>
-                <li><a href="vernal.html">Genealogy Services in Vernal, Utah</a></li>
-                <li><a href="italian-genealogy-new-york.html">Italian Genealogy for New York Families</a></li>
-                <li><a href="italian-genealogy-new-jersey.html">Italian Genealogy for New Jersey Families</a></li>
-            </ul>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>© <span id="current-year">2025</span> Forebear Find. All Rights Reserved.</p>
-            <p>Email: <a href="mailto:info@forebearfind.com">info@forebearfind.com</a> | Phone: <a href="tel:+14352195120">+1 (435) 219-5120</a></p>
-            <p>Powered by <a href="https://cozelosdata.com/" target="_blank" rel="nofollow">cozelosdata</a> <a href="https://cozelosdata.com/" target="_blank" rel="nofollow"><img src="images/cozelos.webp" alt="Cozelos Data Logo" style="vertical-align: middle; height: 20px; margin-left: 10px;" width="20" height="20"></a></p>
-            <a href="privacy.html">Privacy Policy</a>
+          </div>
+          <button class="card-toggle-btn" aria-label="Show details">Learn more <span class="arrow">▼</span></button>
         </div>
-    </footer>
+      </div>
 
-    <script>
-      // Update copyright year
-      document.getElementById('current-year').textContent = new Date().getFullYear();
+      <!-- Card 2: Italian Vital Records -->
+      <div class="service-card" onclick="this.classList.toggle('expanded')">
+        <div class="service-card-media">
+          <div class="placeholder-img">
+            <span class="ph-icon">📜</span>
+            <span>Italian Documents Photo</span>
+          </div>
+        </div>
+        <div class="service-card-body">
+          <h3>Italian Vital Records Retrieval</h3>
+          <p>Professional procurement of birth, marriage, and death certificates directly from Italian government offices — with translations and apostilles.</p>
+          <div class="service-card-details">
+            <ul>
+              <li>Certificati di nascita, matrimonio, e morte</li>
+              <li>Church baptism, marriage &amp; burial records</li>
+              <li>Certified Italian-to-English translations</li>
+              <li>Apostille services for legal recognition</li>
+            </ul>
+          </div>
+          <button class="card-toggle-btn" aria-label="Show details">Learn more <span class="arrow">▼</span></button>
+        </div>
+      </div>
 
-      // Navigation toggle
-      let isToggled = false;
-  function setupToggle() {
-    const toggleLabel = document.getElementById('nav-toggle-label');
-    const navMenu = document.getElementById('nav-menu'); // Using the new ID
+      <!-- Card 3: African American Genealogy -->
+      <div class="service-card" onclick="this.classList.toggle('expanded')">
+        <div class="service-card-media">
+          <div class="placeholder-img">
+            <span class="ph-icon">📖</span>
+            <span>Historical Records Photo</span>
+          </div>
+        </div>
+        <div class="service-card-body">
+          <h3>African American Genealogy</h3>
+          <p>Specialized research honoring your ancestors' resilience — using Freedmen's Bureau records, slave schedules, and post-emancipation documents.</p>
+          <div class="service-card-details">
+            <ul>
+              <li>Freedmen's Bureau records (labor, marriage, school)</li>
+              <li>Pre-1870 census &amp; slave schedule analysis</li>
+              <li>Plantation records &amp; slaveholder documentation</li>
+              <li>African American newspaper &amp; church archives</li>
+              <li>Military service records (Civil War–WWII)</li>
+              <li>Great Migration tracking</li>
+            </ul>
+          </div>
+          <button class="card-toggle-btn" aria-label="Show details">Learn more <span class="arrow">▼</span></button>
+        </div>
+      </div>
 
-    if (toggleLabel && navMenu) {
-      const toggleAction = () => {
-        isToggled = !isToggled;
-        // Control visibility
-        navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
-        // Update visual state and ARIA
-        toggleLabel.classList.toggle('open', isToggled);
-        toggleLabel.setAttribute('aria-expanded', isToggled);
-      };
+      <!-- Card 4: European Ancestry -->
+      <div class="service-card" onclick="this.classList.toggle('expanded')">
+        <div class="service-card-media">
+          <div class="placeholder-img">
+            <span class="ph-icon">🗺️</span>
+            <span>European Heritage Photo</span>
+          </div>
+        </div>
+        <div class="service-card-body">
+          <h3>European Ancestry &amp; Immigration</h3>
+          <p>Trace your family across Ireland, Scotland, Poland, Germany, and beyond — including Ellis Island records and naturalization papers.</p>
+          <div class="service-card-details">
+            <ul>
+              <li>Irish &amp; Scottish civil records and church registers</li>
+              <li>Eastern European genealogy (Poland, Ukraine, Hungary)</li>
+              <li>Ellis Island &amp; ship passenger manifests</li>
+              <li>Port of entry records across the U.S.</li>
+              <li>Multi-generational family tree construction</li>
+            </ul>
+          </div>
+          <button class="card-toggle-btn" aria-label="Show details">Learn more <span class="arrow">▼</span></button>
+        </div>
+      </div>
 
-      toggleLabel.addEventListener('click', toggleAction);
-      toggleLabel.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          toggleAction();
-        }
-      });
-    } else {
-      setTimeout(setupToggle, 100);
+      <!-- Card 5: Custom Narratives -->
+      <div class="service-card" onclick="this.classList.toggle('expanded')">
+        <div class="service-card-media">
+          <div class="placeholder-img">
+            <span class="ph-icon">📕</span>
+            <span>Family Narrative Book Photo</span>
+          </div>
+        </div>
+        <div class="service-card-body">
+          <h3>Custom Family History Narratives</h3>
+          <p>Transform your genealogical data into beautifully written stories your family will treasure — professionally formatted and print-ready.</p>
+          <div class="service-card-details">
+            <ul>
+              <li>Professionally written family history books</li>
+              <li>Ancestral biographies with historical context</li>
+              <li>Immigration journey narratives</li>
+              <li>Photo restoration &amp; integration</li>
+              <li>Print-ready PDFs or bound books</li>
+            </ul>
+          </div>
+          <button class="card-toggle-btn" aria-label="Show details">Learn more <span class="arrow">▼</span></button>
+        </div>
+      </div>
+
+      <!-- Card 6: Comprehensive Packages -->
+      <div class="service-card" onclick="this.classList.toggle('expanded')">
+        <div class="service-card-media">
+          <div class="placeholder-img">
+            <span class="ph-icon">🌳</span>
+            <span>Family Tree Chart Photo</span>
+          </div>
+        </div>
+        <div class="service-card-body">
+          <h3>Comprehensive Research Packages</h3>
+          <p>Not sure where to start? Our full-service packages cover 4–6 generations, brick wall busting, DNA interpretation, and more.</p>
+          <div class="service-card-details">
+            <ul>
+              <li>Complete family tree (4–6 generations)</li>
+              <li>Multi-repository document procurement</li>
+              <li>DNA analysis &amp; genetic genealogy</li>
+              <li>Brick wall &amp; mystery solving</li>
+              <li>Property, probate &amp; land records</li>
+              <li>Descendancy research to find living relatives</li>
+            </ul>
+          </div>
+          <button class="card-toggle-btn" aria-label="Show details">Learn more <span class="arrow">▼</span></button>
+        </div>
+      </div>
+
+    </div><!-- /.services-grid -->
+
+    <!-- ══════════ HOW IT WORKS ══════════ -->
+    <section class="process-section">
+      <h2>How It Works</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Free Consultation</h3>
+          <p>Tell us about your family and your goals. We'll map out the best research plan together.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Archival Research</h3>
+          <p>We dig into archives, church records, immigration databases, and government offices.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Documentation</h3>
+          <p>We obtain certified records, translations, and apostilles — ready for any purpose.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>Your Story</h3>
+          <p>Receive your family's story in beautifully formatted deliverables you'll keep forever.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ SCROLLABLE PHOTO GALLERY ══════════ -->
+    <div style="text-align:center; padding: 40px 5% 16px; background: white;">
+      <h2 style="font-family:'Comic Sans MS','Comic Neue',sans-serif; font-size:clamp(1.6rem,3.5vw,2.2rem); font-weight:700; color:#3b2212;">A Glimpse Into Our Work</h2>
+      <p style="font-family:'Comic Sans MS','Comic Neue',sans-serif; color:#666; max-width:500px; margin:0.5rem auto 0;">Scroll through samples of the records, documents, and family treasures we uncover.</p>
+    </div>
+    <div class="gallery-strip">
+      <div class="gallery-item">
+        <div class="placeholder-img"><span class="ph-icon">📷</span><span>Italian Archive</span></div>
+        <div class="gallery-caption">Inside an Italian State Archive</div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-img"><span class="ph-icon">📷</span><span>Old Certificate</span></div>
+        <div class="gallery-caption">19th Century Birth Certificate</div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-img"><span class="ph-icon">📷</span><span>Family Portrait</span></div>
+        <div class="gallery-caption">Italian Immigrant Family, c. 1910</div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-img"><span class="ph-icon">📷</span><span>Ship Manifest</span></div>
+        <div class="gallery-caption">Ellis Island Passenger Record</div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-img"><span class="ph-icon">📷</span><span>Narrative Book</span></div>
+        <div class="gallery-caption">Finished Family History Book</div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-img"><span class="ph-icon">📷</span><span>Parish Church</span></div>
+        <div class="gallery-caption">Italian Parish Church Records</div>
+      </div>
+    </div>
+
+    <!-- ══════════ VIDEO SHOWCASE ══════════ -->
+    <div class="video-showcase">
+      <h2>See Our Work in Action</h2>
+      <div class="video-row">
+        <div class="video-item">
+          <div class="vid-wrap">
+            <div class="placeholder-video">
+              <span class="ph-icon">▶</span>
+              <span>Italian Citizenship Walkthrough</span>
+            </div>
+          </div>
+          <div class="vid-caption">
+            <h4>Italian Citizenship Research Walkthrough</h4>
+            <p>See how we trace lineages and compile documentation packages.</p>
+          </div>
+        </div>
+        <div class="video-item">
+          <div class="vid-wrap">
+            <div class="placeholder-video">
+              <span class="ph-icon">▶</span>
+              <span>A Family's Story Comes Alive</span>
+            </div>
+          </div>
+          <div class="vid-caption">
+            <h4>A Family's Story Comes Alive</h4>
+            <p>Watch a narrative come together from raw records to finished book.</p>
+          </div>
+        </div>
+        <div class="video-item">
+          <div class="vid-wrap">
+            <div class="placeholder-video">
+              <span class="ph-icon">▶</span>
+              <span>Client Testimonial</span>
+            </div>
+          </div>
+          <div class="vid-caption">
+            <h4>Client Testimonial</h4>
+            <p>Hear from a family who discovered their Italian roots with us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════ CTA BANNER ══════════ -->
+    <section class="cta-banner">
+      <h2>Ready to Discover Your Family's Story?</h2>
+      <p>Contact us for a free consultation. We'll create a research plan tailored to your family.</p>
+      <a href="pricing.html" class="btn">View Pricing</a>
+      <a href="index.html#contact" class="btn">Book Free Consultation</a>
+    </section>
+
+    <!-- Hidden SEO links -->
+    <section class="visually-hidden-seo">
+      <h2>Regional Genealogy Services</h2>
+      <ul>
+        <li><a href="vernal.html">Genealogy Services in Vernal, Utah</a></li>
+        <li><a href="italian-genealogy-new-york.html">Italian Genealogy for New York Families</a></li>
+        <li><a href="italian-genealogy-new-jersey.html">Italian Genealogy for New Jersey Families</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="current-year">2025</span> Forebear Find. All Rights Reserved.</p>
+      <p>Email: <a href="mailto:info@forebearfind.com">info@forebearfind.com</a> | Phone: <a href="tel:+14352195120">+1 (435) 219-5120</a></p>
+      <p>Powered by <a href="https://cozelosdata.com/" target="_blank" rel="nofollow">cozelosdata</a> <a href="https://cozelosdata.com/" target="_blank" rel="nofollow"><img src="images/cozelos.webp" alt="Cozelos Data Logo" style="vertical-align:middle; height:20px; margin-left:10px;" width="20" height="20"></a></p>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Nav toggle
+    let isToggled = false;
+    function setupToggle() {
+      const toggleLabel = document.getElementById('nav-toggle-label');
+      const navMenu = document.getElementById('nav-menu');
+      if (toggleLabel && navMenu) {
+        const toggleAction = () => {
+          isToggled = !isToggled;
+          navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
+          toggleLabel.classList.toggle('open', isToggled);
+          toggleLabel.setAttribute('aria-expanded', isToggled);
+        };
+        toggleLabel.addEventListener('click', toggleAction);
+        toggleLabel.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleAction(); }
+        });
+      } else {
+        setTimeout(setupToggle, 100);
+      }
     }
-  }
-  setupToggle();
-    </script>
+    setupToggle();
+  </script>
 
-    <call-us-selector phonesystem-url="https://1888.3cx.cloud" party="forebearfind"></call-us-selector>
-    <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js"></script>
+  <call-us-selector phonesystem-url="https://1888.3cx.cloud" party="forebearfind"></call-us-selector>
+  <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js"></script>
+
 </body>
 </html>

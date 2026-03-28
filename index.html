@@ -173,6 +173,11 @@
   <span class="visually-hidden">Toggle navigation</span>
 </label>
 
+ <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <a href="index.html" class="lang-btn lang-active">English</a>
+        <a href="index-it.html" class="lang-btn">Italian</a>
+
       <!-- Main navigation -->
       <nav class="main-nav" aria-label="Main Navigation">
         <ul class="nav-menu">
@@ -388,7 +393,7 @@
 
     if (toggleLabel && navToggle && navMenu) {
       toggleLabel.addEventListener('click', () => {
-        isToggled = !isToggled;
+        let isToggled = false; // add this line at the top of setupToggle()
         // navToggle.checked = isToggled; // Fixed logic: should match isToggled
         navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
         toggleLabel.classList.toggle('open', isToggled);
