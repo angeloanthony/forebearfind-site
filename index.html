@@ -371,7 +371,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>© <span id="current-year">2025</span> Forebear Find. All Rights Reserved.</p>
+      <p>&copy; <span id="current-year">2025</span> Forebear Find. All Rights Reserved.</p>
       <p>Email: <a href="mailto:info@forebearfind.com">info@forebearfind.com</a> | Phone: <a href="tel:+14352195120">+1 (435) 219-5120</a></p>
       <p>Powered by <a href="https://cozelosdata.com/" target="_blank" rel="nofollow">cozelosdata</a> <a href="https://cozelosdata.com/" target="_blank" rel="nofollow"><img src="images/cozelos.webp" alt="Cozelos Data Logo" style="vertical-align: middle; height: 20px; margin-left: 10px;" width="20" height="20"></a></p>
       <a href="privacy.html">Privacy Policy</a>
@@ -388,24 +388,21 @@
     // Navigation toggle
   function setupToggle() {
     const toggleLabel = document.getElementById('nav-toggle-label');
-    const navToggle = document.getElementById('nav-toggle'); // This is the checkbox
+    const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.querySelector('.main-nav');
 
     if (toggleLabel && navToggle && navMenu) {
       toggleLabel.addEventListener('click', () => {
-        let isToggled = false; // add this line at the top of setupToggle()
-        // navToggle.checked = isToggled; // Fixed logic: should match isToggled
+        let isToggled = false;
         navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
         toggleLabel.classList.toggle('open', isToggled);
-        
-        // UPDATE: Change the attribute on the checkbox, not the label
         navToggle.setAttribute('aria-expanded', isToggled);
       });
 
       toggleLabel.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          toggleLabel.click(); // Trigger the click listener above
+          toggleLabel.click();
         }
       });
     } else {
@@ -416,20 +413,237 @@
     setupToggle();
   </script>
 
+
+  <!-- ============================================ -->
+  <!-- AI CHAT WIDGET — bottom LEFT                  -->
+  <!-- Instant answers powered by Claude             -->
+  <!-- ============================================ -->
+  <style>
+    #forebear-chat-btn {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background: #8B4513;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 14px 22px;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 9998;
+      font-family: Georgia, serif;
+      transition: background 0.2s;
+    }
+    #forebear-chat-btn:hover { background: #a0522d; }
+
+    #forebear-chat-box {
+      display: none;
+      position: fixed;
+      bottom: 90px;
+      left: 30px;
+      width: 360px;
+      height: 480px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      z-index: 9998;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: Georgia, serif;
+    }
+    #forebear-chat-box.open { display: flex; }
+
+    #ai-chat-header {
+      background: #8B4513;
+      color: white;
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #ai-chat-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 0 4px;
+    }
+
+    #ai-chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ai-bubble {
+      max-width: 82%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+    .ai-bubble.user {
+      background: #8B4513;
+      color: white;
+      align-self: flex-end;
+    }
+    .ai-bubble.bot {
+      background: #f3ece4;
+      color: #333;
+      align-self: flex-start;
+    }
+    .ai-bubble.hint {
+      font-size: 12px;
+      background: #e8ddd3;
+      color: #555;
+      align-self: flex-start;
+    }
+
+    #ai-chat-input-area {
+      display: flex;
+      border-top: 1px solid #eee;
+      padding: 10px;
+      gap: 8px;
+    }
+    #ai-chat-input {
+      flex: 1;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-family: Georgia, serif;
+      outline: none;
+    }
+    #ai-chat-input:focus { border-color: #8B4513; }
+    #ai-chat-send {
+      background: #8B4513;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #ai-chat-send:hover { background: #a0522d; }
+
+    @media (max-width: 480px) {
+      #forebear-chat-box {
+        left: 10px;
+        right: 10px;
+        bottom: 80px;
+        width: auto;
+        height: 400px;
+      }
+      #forebear-chat-btn {
+        bottom: 20px;
+        left: 20px;
+        padding: 12px 16px;
+        font-size: 13px;
+      }
+    }
+  </style>
+
+  <button id="forebear-chat-btn" onclick="toggleAIChat()">🤖 Quick Answers</button>
+
+  <div id="forebear-chat-box">
+    <div id="ai-chat-header">
+      <span>🌿 AI Genealogy Assistant</span>
+      <button id="ai-chat-close" onclick="toggleAIChat()" aria-label="Close AI chat">&times;</button>
+    </div>
+    <div id="ai-chat-messages">
+      <div class="ai-bubble bot">Ciao! I can answer questions about Italian genealogy, dual citizenship, surname origins, and our services instantly. What would you like to know?</div>
+      <div class="ai-bubble hint">Need to speak with Rocco directly? Use the chat bubble on the right side. →</div>
+    </div>
+    <div id="ai-chat-input-area">
+      <input id="ai-chat-input" type="text" placeholder="Ask about your Italian roots..." onkeydown="if(event.key==='Enter') sendAIMessage()" />
+      <button id="ai-chat-send" onclick="sendAIMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleAIChat() {
+      var box = document.getElementById('forebear-chat-box');
+      box.classList.toggle('open');
+      if (box.classList.contains('open')) {
+        document.getElementById('ai-chat-input').focus();
+      }
+    }
+
+    async function sendAIMessage() {
+      var input = document.getElementById('ai-chat-input');
+      var messages = document.getElementById('ai-chat-messages');
+      var userText = input.value.trim();
+      if (!userText) return;
+
+      var userBubble = document.createElement('div');
+      userBubble.className = 'ai-bubble user';
+      userBubble.textContent = userText;
+      messages.appendChild(userBubble);
+      input.value = '';
+      messages.scrollTop = messages.scrollHeight;
+
+      var typing = document.createElement('div');
+      typing.className = 'ai-bubble bot';
+      typing.id = 'ai-typing';
+      typing.textContent = 'Thinking...';
+      messages.appendChild(typing);
+      messages.scrollTop = messages.scrollHeight;
+
+      try {
+        var res = await fetch('https://forebear-chat.roccordeluca.workers.dev', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: userText }),
+        });
+
+        var data = await res.json();
+        typing.remove();
+
+        var botBubble = document.createElement('div');
+        botBubble.className = 'ai-bubble bot';
+        botBubble.textContent = data.reply;
+        messages.appendChild(botBubble);
+      } catch (err) {
+        typing.remove();
+        var errorBubble = document.createElement('div');
+        errorBubble.className = 'ai-bubble bot';
+        errorBubble.textContent = 'Sorry, something went wrong. Please email us at info@forebearfind.com';
+        messages.appendChild(errorBubble);
+      }
+
+      messages.scrollTop = messages.scrollHeight;
+    }
+  </script>
+  <!-- End AI Chat Widget -->
+
+
+  <!-- ============================================ -->
+  <!-- TAWK.TO LIVE CHAT — bottom RIGHT (default)   -->
+  <!-- Talk directly with Rocco                      -->
+  <!-- ============================================ -->
   <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/69ccab5136b7e41c2bf1e0a8/1jl3nqdrg';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-  
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/69ccab5136b7e41c2bf1e0a8/1jl3nqdrg';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+
   <!-- FAQ Schema -->
   <script type="application/ld+json">
 {
