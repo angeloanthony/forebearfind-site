@@ -296,9 +296,24 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
   <script>
     function setupToggle() {
       const toggleLabel = document.getElementById('nav-toggle-label');
       const navToggle = document.getElementById('nav-toggle');
-      const navMenu = document.que
+      const navMenu = document.querySelector('.main-nav');
+      if (toggleLabel && navToggle && navMenu) {
+        toggleLabel.addEventListener('click', () => {
+          let isToggled = navToggle.checked;
+          navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
+          toggleLabel.classList.toggle('open', isToggled);
+          navToggle.setAttribute('aria-expanded', isToggled);
+        });
+      } else {
+        setTimeout(setupToggle, 100);
+      }
+    }
+    setupToggle();
+  </script>
+</body>
+</html>

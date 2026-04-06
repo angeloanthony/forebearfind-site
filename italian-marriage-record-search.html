@@ -40,7 +40,7 @@
 
 <body>
   <div class="top-bar">
-    <div class="container"><span>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e28b8c848da2848d908780878390848b8c86cc818d8f">[email&#160;protected]</a></span> <span>📞 +1 (435) 219-5120</span></div>
+    <div class="container"><span>📧 <a href="mailto:info@forebearfind.com">info@forebearfind.com</a></span> <span>📞 +1 (435) 219-5120</span></div>
   </div>
 
   <header class="main-header">
@@ -152,7 +152,7 @@
         <p style="font-size: 1.2rem; font-weight: bold; color: #002b49; margin-bottom: 10px;">Start your Italian marriage record search today.</p>
         <p style="margin-bottom: 15px;">Tell us the names, approximate dates, and Italian town — we'll track down the record.</p>
         <a href="pricing.html" class="btn">Start Your Search</a>
-        <p style="margin-top: 10px; font-size: 0.9rem;">Or contact us: <a href="/cdn-cgi/l/email-protection#1a73747c755a7c75687f787f7b687c73747e34797577"><span class="__cf_email__" data-cfemail="c5acaba3aa85a3aab7a0a7a0a4b7a3acaba1eba6aaa8">[email&#160;protected]</span></a> | <a href="tel:+14352195120">+1 (435) 219-5120</a></p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">Or contact us: <a href="mailto:info@forebearfind.com">info@forebearfind.com</a> | <a href="tel:+14352195120">+1 (435) 219-5120</a></p>
       </div>
 
       <h2>Related Services</h2>
@@ -165,8 +165,28 @@
   <footer class="footer">
     <div class="container">
       <p>&copy; <span id="current-year">2026</span> Forebear Find. All Rights Reserved.</p>
-      <p>Email: <a href="/cdn-cgi/l/email-protection#8fe6e1e9e0cfe9e0fdeaedeaeefde9e6e1eba1ece0e2"><span class="__cf_email__" data-cfemail="3d54535b527d5b524f585f585c4f5b545359135e5250">[email&#160;protected]</span></a> | Phone: <a href="tel:+14352195120">+1 (435) 219-5120</a></p>
+      <p>Email: <a href="mailto:info@forebearfind.com">info@forebearfind.com</a> | Phone: <a href="tel:+14352195120">+1 (435) 219-5120</a></p>
       <a href="privacy.html">Privacy Policy</a>
     </div>
   </footer>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.ge
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+  <script>
+    function setupToggle() {
+      const toggleLabel = document.getElementById('nav-toggle-label');
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.querySelector('.main-nav');
+      if (toggleLabel && navToggle && navMenu) {
+        toggleLabel.addEventListener('click', () => {
+          let isToggled = navToggle.checked;
+          navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
+          toggleLabel.classList.toggle('open', isToggled);
+          navToggle.setAttribute('aria-expanded', isToggled);
+        });
+      } else {
+        setTimeout(setupToggle, 100);
+      }
+    }
+    setupToggle();
+  </script>
+</body>
+</html>
