@@ -88,42 +88,35 @@
 
   <!-- Main Header -->
   <header class="main-header">
-    <div class="container header-top">
-      <div class="logo-left">
-        <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Italian Genealogy Logo" width="80" height="80"></a>
-      </div>
-      <div class="site-name-center">
-        <span class="site-name">Forebear Find</span>
-      </div>
-
-      <button type="button"
-              class="nav-toggle-label"
-              id="nav-toggle-label"
-              aria-controls="nav-menu"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-        <span></span>
-      </button>
-
-      <!-- Language Switcher -->
-      <div class="lang-switcher">
-        <a href="services.html" class="lang-btn lang-active">English</a>
-        <a href="services-it.html" class="lang-btn">Italian</a>
-      </div>
-
-      <nav class="main-nav" id="nav-menu" aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html" class="active">Services</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="portfolio.html">Research Portfolio</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="support-the-case.html">Support the Case</a></li>
-        </ul>
-      </nav>
+  <div class="container header-top">
+    <div class="logo-left">
+      <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Italian Genealogy Logo" width="80" height="80"></a>
     </div>
-  </header>
+    <div class="site-name-center">
+      <span class="site-name">Forebear Find</span>
+    </div>
+    <div class="lang-switcher">
+      <a href="services.html" class="lang-btn lang-active">English</a>
+      <a href="services-it.html" class="lang-btn">Italian</a>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <label for="nav-toggle" class="nav-toggle-label" id="nav-toggle-label">
+      <span></span>
+      <span class="visually-hidden">Toggle navigation</span>
+    </label>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="support-the-case.html">Support the Case</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <main class="services-page-main">
 
@@ -347,7 +340,7 @@
 
     <!-- ══════════ SCROLLABLE PHOTO GALLERY ══════════ -->
     <div style="text-align:center; padding: 40px 5% 16px; background: white;">
-      <h2 style="font-family:'Comic Sans MS','Comic Neue',sans-serif; font-size:clamp(1.6rem,3.5vw,2.2rem); font-weight:700; color:#3b2212;">A Glimpse Into Our Work</h2>
+      <h2 style="font-family:'Comic Sans MS','Comic Neue',sans-serif; font-size:clamp(1.6rem,3.5vw,2.2rem); font-weight:700; color:#ff4500;">A Glimpse Into Our Work</h2>
       <p style="font-family:'Comic Sans MS','Comic Neue',sans-serif; color:#666; max-width:500px; margin:0.5rem auto 0;">Scroll through samples of the records, documents, and family treasures we uncover.</p>
     </div>
     <div class="gallery-strip">
@@ -450,30 +443,32 @@
   </footer>
 
   <script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+  document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Nav toggle
-    let isToggled = false;
-    function setupToggle() {
-      const toggleLabel = document.getElementById('nav-toggle-label');
-      const navMenu = document.getElementById('nav-menu');
-      if (toggleLabel && navMenu) {
-        const toggleAction = () => {
-          isToggled = !isToggled;
-          navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
-          toggleLabel.classList.toggle('open', isToggled);
-          toggleLabel.setAttribute('aria-expanded', isToggled);
-        };
-        toggleLabel.addEventListener('click', toggleAction);
-        toggleLabel.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleAction(); }
-        });
-      } else {
-        setTimeout(setupToggle, 100);
-      }
+  (function() {
+    const toggleLabel = document.getElementById('nav-toggle-label');
+    const navToggle  = document.getElementById('nav-toggle');
+    const navMenu    = document.querySelector('.main-nav');
+    if (toggleLabel && navToggle && navMenu) {
+      toggleLabel.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isOpen = navMenu.classList.contains('open');
+        if (isOpen) {
+          navMenu.classList.remove('open');
+          navMenu.classList.add('closed');
+          toggleLabel.classList.remove('open');
+          navToggle.checked = false;
+        } else {
+          navMenu.classList.remove('closed');
+          navMenu.classList.add('open');
+          toggleLabel.classList.add('open');
+          navToggle.checked = true;
+        }
+      });
     }
-    setupToggle();
-  </script>
+  })();
+</script>
+
 
   <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -487,7 +482,5 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
 </script>
-<script>document.getElementById('current-year').textContent=new Date().getFullYear();</script>
-
 </body>
 </html>

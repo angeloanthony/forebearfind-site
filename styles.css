@@ -961,7 +961,7 @@ main img {
 }
 
 /* Active nav link */
-.main-nav .nav-menu li a.active { font-weight: bold; color: #ff69b4; }
+.main-nav .nav-menu li a.active { font-weight: bold; color: #a44b73; }
 
 /* ──────────────────────────────────────────────────────────────
    RESPONSIVE — shared
@@ -1159,7 +1159,7 @@ main img {
 
 .services-hero-content h1 {
   font-family: 'Comic Sans MS', 'Comic Neue', sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 2.2rem;
   color: #ff4500;
   margin-bottom: 1rem;
 }
@@ -1193,7 +1193,7 @@ main img {
 
 .intro-video-row .intro-text h2 {
   font-family: 'Comic Sans MS', 'Comic Neue', sans-serif;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: 2rem;
   color: #ff4500;
   margin-bottom: 1rem;
 }
@@ -1278,7 +1278,7 @@ main img {
 
 .services-grid-heading h2 {
   font-family: 'Comic Sans MS', 'Comic Neue', sans-serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-size: 2rem;
   color: #ff4500;
   margin-bottom: 0.5rem;
 }
@@ -1437,7 +1437,7 @@ main img {
 
 .process-section h2 {
   font-family: 'Comic Sans MS', 'Comic Neue', sans-serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-size: 2rem;
   color: #ff4500;
   margin-bottom: 40px;
 }
@@ -1552,7 +1552,7 @@ main img {
 
 .video-showcase h2 {
   font-family: 'Comic Sans MS', 'Comic Neue', sans-serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-size: 2rem;
   color: #ff4500;
   margin-bottom: 36px;
 }
@@ -1596,7 +1596,7 @@ main img {
 
 .cta-banner h2 {
   font-family: 'Comic Sans MS', 'Comic Neue', sans-serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-size: 2rem;
   color: white;
   margin-bottom: 16px;
 }
