@@ -85,42 +85,36 @@
     </div>
 
     <!-- Main Header -->
-    <header class="main-header">
-        <div class="container header-top">
-            <div class="logo-left">
-                <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Italian Genealogy Logo" width="100" height="100"></a>
-            </div>
-            <div class="site-name-center">
-                <span class="site-name">Forebear Find</span>
-            </div>
-
-<button type="button" 
-          class="nav-toggle-label" 
-          id="nav-toggle-label" 
-          aria-controls="nav-menu" 
-          aria-expanded="false" 
-          aria-label="Toggle navigation">
-    <span></span>
-  </button>
-
-<!-- Language Switcher -->
-      <div class="lang-switcher">
-        <a href="index.html" class="lang-btn lang-active">English</a>
-        <a href="index-it.html" class="lang-btn">Italian</a>
-
-  <nav class="main-nav" id="nav-menu" aria-label="Main Navigation">
-    <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="pricing.html" class="active">Pricing</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="support-the-case.html">Support the Case</a></li>                    
-    </ul>
-  </nav>
-        </div>
-    </header>
+<header class="main-header">
+  <div class="container header-top">
+    <div class="logo-left">
+      <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Italian Genealogy Logo" width="100" height="100"></a>
+    </div>
+    <div class="site-name-center">
+      <span class="site-name">Forebear Find</span>
+    </div>
+    <div class="lang-switcher">
+      <a href="pricing.html" class="lang-btn lang-active">English</a>
+      <a href="pricing-it.html" class="lang-btn">Italian</a>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <label for="nav-toggle" class="nav-toggle-label" id="nav-toggle-label">
+      <span></span>
+      <span class="visually-hidden">Toggle navigation</span>
+    </label>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="support-the-case.html">Support the Case</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
     <main>
         <section>
@@ -407,5 +401,6 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
 </script>
+<script>document.getElementById('current-year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

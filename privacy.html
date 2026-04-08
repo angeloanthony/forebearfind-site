@@ -9,38 +9,32 @@
   </head>
 <body>
  <header class="main-header">
-    <div class="container header-top">
-      <div class="logo-left">
-        <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Logo" width="80" height="80"></a>
-      </div>
-      <div class="site-name-center">
-        <span class="site-name">Forebear Find</span>
-      </div>
-      <button type="button" 
-              class="nav-toggle-label" 
-              id="nav-toggle-label" 
-              aria-controls="nav-menu" 
-              aria-expanded="false" 
-              aria-label="Toggle navigation">
-        <span></span>
-      </button>
-      <nav class="main-nav" id="nav-menu" aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="portfolio.html">Research Portfolio</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="support-the-case.html">Support the Case</a></li>                    
-        </ul>
-      </nav>
+  <div class="container header-top">
+    <div class="logo-left">
+      <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Logo" width="80" height="80"></a>
     </div>
-    <div style="text-align: center; padding: 20px 0;">
-      <h1>Privacy Policy</h1>
-      <p><strong>Effective Date:</strong> June 17, 2025</p>
+    <div class="site-name-center">
+      <span class="site-name">Forebear Find</span>
     </div>
-  </header>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <label for="nav-toggle" class="nav-toggle-label" id="nav-toggle-label"><span></span><span class="visually-hidden">Toggle navigation</span></label>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="portfolio.html">Research Portfolio</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="support-the-case.html">Support the Case</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div style="text-align: center; padding: 20px 0;">
+    <h1>Privacy Policy</h1>
+    <p><strong>Effective Date:</strong> June 17, 2025</p>
+  </div>
+</header>
 
   <main>
     <section>
@@ -155,33 +149,6 @@
   <footer>
     <p>© 2025 Forebear Find. All rights reserved.</p>
   </footer>
+  <script>document.getElementById('current-year').textContent=new Date().getFullYear();</script>
 </body>
-
-<script>
-  let isToggled = false;
-  function setupToggle() {
-    const toggleButton = document.getElementById('nav-toggle-label');
-    const navMenu = document.getElementById('nav-menu');
-
-    if (toggleButton && navMenu) {
-      const toggleAction = () => {
-        isToggled = !isToggled;
-        navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
-        toggleButton.classList.toggle('open', isToggled);
-        toggleButton.setAttribute('aria-expanded', isToggled);
-      };
-
-      toggleButton.addEventListener('click', toggleAction);
-      toggleButton.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          toggleAction();
-        }
-      });
-    } else {
-      setTimeout(setupToggle, 100);
-    }
-  }
-  setupToggle();
-</script>
 </html>

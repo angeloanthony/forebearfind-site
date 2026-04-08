@@ -321,20 +321,21 @@
       const navToggle = document.getElementById('nav-toggle');
       const navMenu = document.querySelector('.main-nav');
       if (toggleLabel && navToggle && navMenu) {
-        toggleLabel.addEventListener('click', function() {
-          const isOpen = navMenu.classList.contains('open');
-          if (isOpen) {
-            navMenu.classList.remove('open');
-            navMenu.classList.add('closed');
-            toggleLabel.classList.remove('open');
-            navToggle.checked = false;
-          } else {
-            navMenu.classList.remove('closed');
-            navMenu.classList.add('open');
-            toggleLabel.classList.add('open');
-            navToggle.checked = true;
-          }
-        });
+        toggleLabel.addEventListener('click', function(e) {
+  e.preventDefault();
+  const isOpen = navMenu.classList.contains('open');
+  if (isOpen) {
+    navMenu.classList.remove('open');
+    navMenu.classList.add('closed');
+    toggleLabel.classList.remove('open');
+    navToggle.checked = false;
+  } else {
+    navMenu.classList.remove('closed');
+    navMenu.classList.add('open');
+    toggleLabel.classList.add('open');
+    navToggle.checked = true;
+  }
+});
       }
     })();
 
@@ -346,7 +347,7 @@
 
     // Copy link
     function copyLink() {
-      navigator.clipboard.writeText('https://forebearfind.com/support-the-case.html').then(function(function() {
+  navigator.clipboard.writeText('https://forebearfind.com/support-the-case.html').then(function() {
         alert('Link copied to clipboard!');
       }).catch(function() {
         prompt('Copy this link:', 'https://forebearfind.com/support-the-case.html');
@@ -369,5 +370,6 @@
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
+  <script>document.getElementById('current-year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

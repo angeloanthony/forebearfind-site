@@ -157,42 +157,36 @@
 
   <!-- Main Navigation -->
   <header class="main-header">
-    <div class="container header-top">
-      <div class="logo-left">
-        <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Italian Genealogy Logo" width="80" height="80"></a>
-      </div>
-      <div class="site-name-center">
-        <span class="site-name">Forebear Find</span>
-      </div>
-
-<!-- Hidden checkbox for mobile nav toggle -->
-<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-
-<label for="nav-toggle" class="nav-toggle-label" id="nav-toggle-label">
-  <span></span>
-  <span class="visually-hidden">Toggle navigation</span>
-</label>
-
- <!-- Language Switcher -->
-      <div class="lang-switcher">
-        <a href="index.html" class="lang-btn lang-active">English</a>
-        <a href="index-it.html" class="lang-btn">Italian</a>
-
-      <!-- Main navigation -->
-      <nav class="main-nav" aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="portfolio.html">Research Portfolio</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="support-the-case.html">Support the Case</a></li>
-          <li class="visually-hidden-seo"><a href="vernal.html">Vernal</a></li>
-        </ul>
-      </nav>
+  <div class="container header-top">
+    <div class="logo-left">
+      <a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Italian Genealogy Logo" width="80" height="80"></a>
     </div>
-  </header>
+    <div class="site-name-center">
+      <span class="site-name">Forebear Find</span>
+    </div>
+    <div class="lang-switcher">
+      <a href="index.html" class="lang-btn lang-active">English</a>
+      <a href="index-it.html" class="lang-btn">Italian</a>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <label for="nav-toggle" class="nav-toggle-label" id="nav-toggle-label">
+      <span></span>
+      <span class="visually-hidden">Toggle navigation</span>
+    </label>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <ul class="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="portfolio.html">Research Portfolio</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="support-the-case.html">Support the Case</a></li>
+        <li class="visually-hidden-seo"><a href="vernal.html">Vernal</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <section class="hero-row">
@@ -393,12 +387,21 @@
     const navMenu = document.querySelector('.main-nav');
 
     if (toggleLabel && navToggle && navMenu) {
-      toggleLabel.addEventListener('click', () => {
-        let isToggled = false;
-        navMenu.style.cssText = isToggled ? 'display: block !important' : 'display: none !important';
-        toggleLabel.classList.toggle('open', isToggled);
-        navToggle.setAttribute('aria-expanded', isToggled);
-      });
+      toggleLabel.addEventListener('click', function(e) {
+  e.preventDefault();
+  const isOpen = navMenu.classList.contains('open');
+  if (isOpen) {
+    navMenu.classList.remove('open');
+    navMenu.classList.add('closed');
+    toggleLabel.classList.remove('open');
+    navToggle.checked = false;
+  } else {
+    navMenu.classList.remove('closed');
+    navMenu.classList.add('open');
+    toggleLabel.classList.add('open');
+    navToggle.checked = true;
+  }
+});
 
       toggleLabel.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
@@ -686,6 +689,6 @@
   ]
 }
 </script>
-
+<script>document.getElementById('current-year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

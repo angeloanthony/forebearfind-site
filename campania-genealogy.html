@@ -46,7 +46,7 @@
 <body>
   <div class="top-bar"><div class="container"><span>📧 info@forebearfind.com</span><span>📞 +1 (435) 219-5120</span></div></div>
 
-  <header class="main-header">
+<header class="main-header">
     <div class="container header-top">
       <div class="logo-left"><a href="index.html"><img src="images/ForebearFindLogo1.png" alt="Forebear Find Italian Genealogy Logo" width="80" height="80"></a></div>
       <div class="site-name-center"><span class="site-name">Forebear Find</span></div>
@@ -158,7 +158,31 @@
     </div>
   </footer>
 
-  <script>document.getElementById('current-year').textContent=new Date().getFullYear();function setupToggle(){const t=document.getElementById('nav-toggle-label'),n=document.getElementById('nav-toggle'),m=document.querySelector('.main-nav');if(t&&n&&m){t.addEventListener('click',()=>{let i=false;m.style.cssText=i?'display:block!important':'display:none!important';t.classList.toggle('open',i);n.setAttribute('aria-expanded',i)});t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t.click()}})}else{setTimeout(setupToggle,100)}}setupToggle();</script>
+ <script>
+document.getElementById('current-year').textContent = new Date().getFullYear();
+(function() {
+  const toggleLabel = document.getElementById('nav-toggle-label');
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.querySelector('.main-nav');
+  if (toggleLabel && navMenu) {
+    toggleLabel.addEventListener('click', function(e) {
+      e.preventDefault();
+      const isOpen = navMenu.classList.contains('open');
+      if (isOpen) {
+        navMenu.classList.remove('open');
+        navMenu.classList.add('closed');
+        toggleLabel.classList.remove('open');
+        if (navToggle) navToggle.checked = false;
+      } else {
+        navMenu.classList.remove('closed');
+        navMenu.classList.add('open');
+        toggleLabel.classList.add('open');
+        if (navToggle) navToggle.checked = true;
+      }
+    });
+  }
+})();
+</script>
  <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -175,5 +199,6 @@
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"My family says they're from Naples. Does that mean Naples city or the broader region?","acceptedAnswer":{"@type":"Answer","text":"This is extremely common — and it could mean either. Many Italian-Americans were told their family was 'from Naples' when they actually came from a small town in the province of Napoli, or even from the neighboring provinces of Avellino, Salerno, or Caserta. Naples was the major port of departure, so families often identified with the city even if they lived in surrounding villages. We use US records to pinpoint the exact comune before searching Italian archives."}},{"@type":"Question","name":"How far back do Campanian civil records go?","acceptedAnswer":{"@type":"Answer","text":"Civil registration in Campania began in 1809 under Napoleon — over a decade earlier than Sicily and more than 50 years before northern Italy. These records are detailed and well-preserved. Combined with parish records that often reach back to the late 1500s, it's possible to trace Campanian families across many generations."}},{"@type":"Question","name":"Can you help me get Italian dual citizenship through my Campanian ancestors?","acceptedAnswer":{"@type":"Answer","text":"Yes. We assemble the complete documentation chain for jure sanguinis applications, including retrieving certified birth, marriage, and death certificates from Campanian municipal offices, verifying your ancestor's naturalization timeline in the US, and ensuring all documents are translated and apostilled for your consulate appointment."}},{"@type":"Question","name":"My ancestor was from a very small village in Avellino province. Will there be records?","acceptedAnswer":{"@type":"Answer","text":"Almost certainly yes. Even the smallest comuni in Avellino province maintained civil registration records from 1809 onward, and the local parish church kept sacramental records for centuries before that. Small towns can actually be easier to research because the population was more contained and the records more manageable."}}]}
   </script>
+  <script>document.getElementById('current-year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
