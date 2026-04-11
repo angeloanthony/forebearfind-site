@@ -3,37 +3,37 @@
   <!-- Core Pages -->
   <url>
     <loc>https://forebearfind.com/index.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://forebearfind.com/services.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://forebearfind.com/pricing.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://forebearfind.com/about.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://forebearfind.com/portfolio.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://forebearfind.com/faq.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -50,57 +50,85 @@
     <priority>0.2</priority>
   </url>
 
-  <!-- Phase 1: Money Pages (Closers & Converters) -->
+  <!-- PILLAR PAGE -->
+  <url>
+    <loc>https://forebearfind.com/italian-genealogy-research-services.html</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Money Pages -->
   <url>
     <loc>https://forebearfind.com/italian-dual-citizenship-by-descent.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://forebearfind.com/italian-birth-record-search.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://forebearfind.com/italian-marriage-record-search.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://forebearfind.com/missing-italian-birth-certificate.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://forebearfind.com/wrong-name-on-italian-record.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://forebearfind.com/no-record-found-italy-what-to-do.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://forebearfind.com/italian-citizenship-2026-law-changes.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://forebearfind.com/lltm-italian-citizenship.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Geographic SEO: State/Region Pages (English) -->
+  <!-- NEW: Problem, Support-Case & Hire Pages -->
+  <url>
+    <loc>https://forebearfind.com/italian-records-destroyed-what-to-do.html</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://forebearfind.com/proving-italian-citizenship-with-missing-records.html</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://forebearfind.com/hire-italian-genealogist.html</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Geographic SEO: US State Pages -->
   <url>
     <loc>https://forebearfind.com/italian-genealogy-new-york.html</loc>
     <lastmod>2026-04-04</lastmod>
@@ -140,7 +168,7 @@
     <priority>0.75</priority>
   </url>
 
-  <!-- Geographic SEO: Italian-Language Pages -->
+  <!-- Italian-Language Pages -->
   <url>
     <loc>https://forebearfind.com/ricerche-genealogiche-new-jersey.html</loc>
     <lastmod>2026-04-04</lastmod>

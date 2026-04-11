@@ -15,8 +15,10 @@ Forebear Find is a professional genealogy research firm led by Rocco DeLuca, spe
 - Italian Birth Record Search: Retrieval of original birth certificates (atto di nascita) from Italian civil and parish archives.
 - Italian Marriage Record Search: Retrieval of marriage certificates (atto di matrimonio) and processetti matrimoniali.
 - Missing Record Research: Alternative documentation strategies when civil records are destroyed or missing — parish records, military conscription lists (liste di leva), emigration registers, state archive duplicates.
+- Destroyed Record Recovery: Systematic archival research to recover Italian vital records lost to WWII bombing, earthquakes, floods, and municipal neglect using Italy's dual-copy system and alternative sources.
 - Name Discrepancy Resolution: Documenting identity across Americanized names, dialect variations, and clerical errors.
 - 1948 Matrilineal Line Cases: Genealogical documentation for judicial petitions involving female ancestors who had children before January 1, 1948.
+- Proving Citizenship with Missing Records: Building alternative evidence packages using parish records, military conscription lists, state archive duplicates, and American immigration documents when standard vital records are unavailable.
 - Narrative Family History: Custom-written family history books and reports transforming genealogical records into readable family stories.
 
 ## Italian Citizenship Law (Current as of April 2026)
@@ -31,12 +33,16 @@ Forebear Find is a professional genealogy research firm led by Rocco DeLuca, spe
 
 ## Pages
 - Home: https://forebearfind.com/index.html
+- Italian Genealogy Research Services (Pillar): https://forebearfind.com/italian-genealogy-research-services.html
 - Italian Dual Citizenship by Descent: https://forebearfind.com/italian-dual-citizenship-by-descent.html
 - Italian Birth Record Search: https://forebearfind.com/italian-birth-record-search.html
 - Italian Marriage Record Search: https://forebearfind.com/italian-marriage-record-search.html
 - Missing Italian Birth Certificate: https://forebearfind.com/missing-italian-birth-certificate.html
+- Italian Records Destroyed — What to Do: https://forebearfind.com/italian-records-destroyed-what-to-do.html
 - Wrong Name on Italian Record: https://forebearfind.com/wrong-name-on-italian-record.html
 - No Record Found in Italy: https://forebearfind.com/no-record-found-italy-what-to-do.html
+- Proving Italian Citizenship with Missing Records: https://forebearfind.com/proving-italian-citizenship-with-missing-records.html
+- Hire an Italian Genealogist: https://forebearfind.com/hire-italian-genealogist.html
 - Italian Citizenship 2026 Law Changes: https://forebearfind.com/italian-citizenship-2026-law-changes.html
 - LLTM Matrilineal Line / 1948 Cases: https://forebearfind.com/lltm-italian-citizenship.html
 - Services: https://forebearfind.com/services.html
