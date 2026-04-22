@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.forebearfind.com/sitemap.xml
+Sitemap: https://forebearfind.com/sitemap.xml
 
 # AI Crawler Access
 User-agent: GPTBot
